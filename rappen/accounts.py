@@ -60,8 +60,14 @@ def complete_chart(company: str) -> dict[str, list[str]]:
 			frappe.clear_last_message()
 			skipped.append(f"{name}: {error}")
 
+	stock_account = _stock_received_but_not_billed(company)
+	if stock_account and stock_account["created"]:
+		changed.append(_("{0}: created for goods received but not billed").format(stock_account["name"]))
+
 	values = {}
 	doc = frappe.get_doc("Company", company)
+	if stock_account and not doc.stock_received_but_not_billed:
+		values["stock_received_but_not_billed"] = stock_account["name"]
 	for fieldname, number in COMPANY_DEFAULTS.items():
 		name = _account(company, number)
 		if name and not doc.get(fieldname):
@@ -74,6 +80,34 @@ def complete_chart(company: str) -> dict[str, list[str]]:
 		label = {f.fieldname: _(f.label) for f in doc.meta.fields}
 		changed += [f"{label.get(field, field)}: {value}" for field, value in values.items()]
 	return {"changed": changed, "skipped": skipped}
+
+
+def _stock_received_but_not_billed(company: str) -> dict | None:
+	"""Clearing account for goods received but not billed, which ERPNext needs for every purchase invoice when
+	perpetual inventory is on. The Swiss chart has none, so it is created as 2005 next to the payables."""
+	if not frappe.get_cached_value("Company", company, "enable_perpetual_inventory"):
+		return None
+	existing = frappe.db.get_value(
+		"Account",
+		{"company": company, "account_type": "Stock Received But Not Billed", "is_group": 0},
+		"name",
+	)
+	if existing:
+		return {"name": existing, "created": False}
+	payables = _account(company, "2000")
+	if not payables or _account(company, "2005"):
+		return None
+	account = frappe.get_doc(
+		{
+			"doctype": "Account",
+			"account_name": _("Goods received, not yet billed"),
+			"account_number": "2005",
+			"parent_account": frappe.db.get_value("Account", payables, "parent_account"),
+			"company": company,
+			"account_type": "Stock Received But Not Billed",
+		}
+	).insert()
+	return {"name": account.name, "created": True}
 
 
 def uses_swiss_chart(company: str) -> bool:

@@ -293,6 +293,9 @@ msgstr "Aus der QR-Rechnung. Leer: das Bankkonto des Lieferanten."
 msgid "Get open purchase invoices"
 msgstr "Offene Eingangsrechnungen holen"
 
+msgid "Goods received, not yet billed"
+msgstr "Wareneingänge, noch nicht fakturiert"
+
 msgid "IBAN of the supplier"
 msgstr "IBAN des Lieferanten"
 
@@ -781,6 +784,9 @@ msgstr "{0} ist eine QR-IBAN. Sie funktioniert nur zusammen mit einer QR-Referen
 
 msgid "{0}: account type {1}"
 msgstr "{0}: Kontotyp {1}"
+
+msgid "{0}: created for goods received but not billed"
+msgstr "{0}: für noch nicht fakturierte Wareneingänge angelegt"
 
 msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
 msgstr "{iban} ist keine QR-IBAN. Eine QR-IBAN ist eine IBAN aus der Schweiz oder Liechtenstein mit einer Instituts-Identifikation (Stellen 5 bis 9) von 30000 bis 31999."

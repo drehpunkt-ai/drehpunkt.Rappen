@@ -293,6 +293,9 @@ msgstr ""
 msgid "Get open purchase invoices"
 msgstr ""
 
+msgid "Goods received, not yet billed"
+msgstr ""
+
 msgid "IBAN of the supplier"
 msgstr ""
 
@@ -780,6 +783,9 @@ msgid "{0} is a QR-IBAN. It only works together with a QR reference, so it belon
 msgstr ""
 
 msgid "{0}: account type {1}"
+msgstr ""
+
+msgid "{0}: created for goods received but not billed"
 msgstr ""
 
 msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
