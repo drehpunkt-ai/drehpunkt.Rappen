@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: rappen\n"
+"Report-Msgid-Bugs-To: marco@drehpunkt.ai\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "A Creditor Reference holds 1 to 21 letters (A to Z) or digits, got {body}."
+msgstr "Une Creditor Reference contient 1 à 21 lettres (A à Z) ou chiffres, reçu : {body}."
+
+msgid "A Creditor Reference starts with RF and two check digits, followed by 1 to 21 letters or digits. {reference} does not."
+msgstr "Une Creditor Reference commence par RF et deux chiffres de contrôle, suivis de 1 à 21 lettres ou chiffres. Ce n'est pas le cas de {reference}."
+
+msgid "A QR reference can only contain digits, got {body}."
+msgstr "Une référence QR ne contient que des chiffres, reçu : {body}."
+
+msgid "A QR reference has exactly 27 digits, {reference} does not."
+msgstr "Une référence QR compte exactement 27 chiffres, ce n'est pas le cas de {reference}."
+
+msgid "A QR reference holds at most 26 digits before the check digit, {body} has {length}."
+msgstr "Une référence QR compte au plus 26 chiffres avant le chiffre de contrôle, {body} en compte {length}."
+
+msgid "A QR reference prefix only applies to a QR-IBAN. Enter the QR-IBAN first."
+msgstr "Un préfixe de référence QR ne s'applique qu'à un QR-IBAN. Saisissez d'abord le QR-IBAN."
+
+msgid "Address line 2 ({0}) does not appear on QR-bills and in payment files. They only know street, building number, postal code, town and country."
+msgstr "La ligne d'adresse 2 ({0}) n'apparaît pas sur les QR-factures ni dans les fichiers de paiement. Ceux-ci ne connaissent que la rue, le numéro, le numéro postal, la localité et le pays."
+
+msgid "Address on payments"
+msgstr "Adresse sur les paiements"
+
+msgid "Building number"
+msgstr "Numéro"
+
+msgid "Country"
+msgstr "Pays"
+
+msgid "Country code {country} is invalid, it needs two letters (ISO 3166-1)."
+msgstr "Le code de pays {country} n'est pas valable, il doit compter deux lettres (ISO 3166-1)."
+
+msgid "Creditor Reference {reference} is invalid: the check digits do not match."
+msgstr "La Creditor Reference {reference} n'est pas valable : les chiffres de contrôle ne correspondent pas."
+
+msgid "IBAN {iban} has {length} characters, IBANs from {country} have {expected}."
+msgstr "L'IBAN {iban} compte {length} caractères, les IBAN du pays {country} en comptent {expected}."
+
+msgid "IBAN {iban} is invalid: it must start with a country code and two check digits, followed by 11 to 30 letters or digits."
+msgstr "L'IBAN {iban} n'est pas valable : il commence par le code du pays et deux chiffres de contrôle, suivis de 11 à 30 lettres ou chiffres."
+
+msgid "IBAN {iban} is invalid: the check digits do not match."
+msgstr "L'IBAN {iban} n'est pas valable : les chiffres de contrôle ne correspondent pas."
+
+msgid "Invalid IBAN"
+msgstr "IBAN non valable"
+
+msgid "Invalid QR-IBAN"
+msgstr "QR-IBAN non valable"
+
+msgid "Only for QR-bills with a QR reference. Your bank assigns it in addition to the IBAN."
+msgstr "Uniquement pour les QR-factures avec référence QR. Votre banque l'attribue en plus de l'IBAN."
+
+msgid "Postal code"
+msgstr "Numéro postal"
+
+msgid "QR reference prefix (BESR-ID)"
+msgstr "Préfixe de la référence QR (ID BESR)"
+
+msgid "QR reference {reference} is invalid: the check digit does not match."
+msgstr "La référence QR {reference} n'est pas valable : le chiffre de contrôle ne correspond pas."
+
+msgid "QR-IBAN"
+msgstr "QR-IBAN"
+
+msgid "Some banks require every QR reference to start with a number they assign. Leave empty if yours does not."
+msgstr "Certaines banques exigent que chaque référence QR commence par un numéro qu'elles attribuent. Laisser vide si ce n'est pas le cas de la vôtre."
+
+msgid "Street"
+msgstr "Rue"
+
+msgid "Swiss and Liechtenstein postal codes have four digits, {postal_code} does not."
+msgstr "Les numéros postaux de Suisse et du Liechtenstein comptent quatre chiffres, ce n'est pas le cas de {postal_code}."
+
+msgid "The country is missing in the address of {name}."
+msgstr "Le pays manque dans l'adresse de {name}."
+
+msgid "The name is missing in the address."
+msgstr "Le nom manque dans l'adresse."
+
+msgid "The name {name} is too long: {length} characters, at most {limit} are allowed."
+msgstr "Le nom {name} est trop long : {length} caractères, {limit} au maximum sont autorisés."
+
+msgid "The postal code is missing in the address of {name}."
+msgstr "Le numéro postal manque dans l'adresse de {name}."
+
+msgid "The postal code {postal_code} is too long: at most {limit} characters are allowed."
+msgstr "Le numéro postal {postal_code} est trop long : {limit} caractères au maximum sont autorisés."
+
+msgid "The QR reference prefix consists of digits only, at most {0} of them."
+msgstr "Le préfixe de référence QR ne contient que des chiffres, {0} au maximum."
+
+msgid "The street {street} is too long: {length} characters, at most {limit} are allowed."
+msgstr "La rue {street} est trop longue : {length} caractères, {limit} au maximum sont autorisés."
+
+msgid "The town is missing in the address of {name}."
+msgstr "La localité manque dans l'adresse de {name}."
+
+msgid "The town {town} is too long: {length} characters, at most {limit} are allowed."
+msgstr "La localité {town} est trop longue : {length} caractères, {limit} au maximum sont autorisés."
+
+msgid "This is how the address appears on QR-bills and in payment files."
+msgstr "Voici comment l'adresse apparaît sur les QR-factures et dans les fichiers de paiement."
+
+msgid "Town"
+msgstr "Localité"
+
+msgid "{0} is a QR-IBAN. It only works together with a QR reference, so it belongs in the field QR-IBAN, not in the field IBAN."
+msgstr "{0} est un QR-IBAN. Il ne fonctionne qu'avec une référence QR et doit donc figurer dans le champ QR-IBAN, pas dans le champ IBAN."
+
+msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
+msgstr "{iban} n'est pas un QR-IBAN. Un QR-IBAN est un IBAN suisse ou liechtensteinois dont l'identification de l'établissement (positions 5 à 9) est comprise entre 30000 et 31999."

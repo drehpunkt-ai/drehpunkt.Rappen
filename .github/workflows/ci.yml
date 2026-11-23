@@ -1,0 +1,131 @@
+# Lint, core tests and integration tests in Frappe. Actions are pinned to a commit, images to a digest.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14"
+      - run: pip install ruff==0.17.6
+      - run: ruff check .
+      - run: ruff format --check .
+
+  core:
+    name: Core tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14"
+      # The app's own dependencies plus pytest, without Frappe
+      - run: pip install pytest==9.2.0 $(python -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml', 'rb'))['project']['dependencies']))")
+      - run: pytest
+
+  integration:
+    name: Integration (${{ matrix.name }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # The versions pinned in the Docker image that Drehpunkt runs
+          - name: pinned
+            frappe: v16.56.0
+            erpnext: v16.55.0
+          # What Frappe Cloud and new installations get
+          - name: latest version-16
+            frappe: version-16
+            erpnext: version-16
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14"
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+
+      # Same server settings as in production (MariaDB 11.8 needs snapshot isolation off for Frappe)
+      - name: Start MariaDB and Valkey
+        run: |
+          docker run -d --name mariadb -p 3306:3306 -e MARIADB_ROOT_PASSWORD=root \
+            mariadb:11.8.9@sha256:e1d5495f445654134f226f55a41ce0da227116f6f27f283101f405c794d841fc \
+            --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci \
+            --skip-character-set-client-handshake --innodb-snapshot-isolation=OFF
+          docker run -d --name cache -p 13000:6379 \
+            valkey/valkey:8.1.12-alpine@sha256:9971099af41c36e887aabdfe22b80c0fe45df949163dfc9cb434febc57cfc3fc
+          docker run -d --name queue -p 11000:6379 \
+            valkey/valkey:8.1.12-alpine@sha256:9971099af41c36e887aabdfe22b80c0fe45df949163dfc9cb434febc57cfc3fc
+          for i in $(seq 1 60); do
+            docker exec mariadb healthcheck.sh --connect --innodb_initialized && exit 0
+            sleep 2
+          done
+          docker logs mariadb
+          exit 1
+
+      - name: Install MariaDB client
+        run: sudo apt-get update && sudo apt-get install -y mariadb-client
+
+      - name: Bench with Frappe
+        run: |
+          pip install frappe-bench==5.31.1
+          bench init --skip-redis-config-generation --skip-assets --python "$(which python)" \
+            --frappe-branch "${{ matrix.frappe }}" ~/frappe-bench
+
+      - name: ERPNext and Rappen
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench get-app --branch "${{ matrix.erpnext }}" erpnext https://github.com/frappe/erpnext
+          bench get-app rappen "$GITHUB_WORKSPACE"
+          bench setup requirements --dev
+          bench new-site test_site --db-host 127.0.0.1 --db-root-password root --admin-password admin \
+            --mariadb-user-host-login-scope='%'
+          bench --site test_site install-app erpnext
+          bench --site test_site install-app rappen
+        env:
+          CI: "Yes"
+
+      - name: Tests
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench --site test_site set-config allow_tests true
+          bench --site test_site run-tests --app rappen
+
+      - name: Translations
+        if: matrix.name == 'pinned'
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench generate-pot-file --app rappen
+          python "$GITHUB_WORKSPACE/.github/scripts/check_translations.py" \
+            apps/rappen/rappen/locale/main.pot "$GITHUB_WORKSPACE/rappen/locale"
+
+      - name: Uninstall
+        if: matrix.name == 'pinned'
+        working-directory: /home/runner/frappe-bench
+        run: bench --site test_site uninstall-app rappen --yes --no-backup

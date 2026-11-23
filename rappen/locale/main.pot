@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: rappen\n"
+"Report-Msgid-Bugs-To: marco@drehpunkt.ai\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "A Creditor Reference holds 1 to 21 letters (A to Z) or digits, got {body}."
+msgstr ""
+
+msgid "A Creditor Reference starts with RF and two check digits, followed by 1 to 21 letters or digits. {reference} does not."
+msgstr ""
+
+msgid "A QR reference can only contain digits, got {body}."
+msgstr ""
+
+msgid "A QR reference has exactly 27 digits, {reference} does not."
+msgstr ""
+
+msgid "A QR reference holds at most 26 digits before the check digit, {body} has {length}."
+msgstr ""
+
+msgid "A QR reference prefix only applies to a QR-IBAN. Enter the QR-IBAN first."
+msgstr ""
+
+msgid "Address line 2 ({0}) does not appear on QR-bills and in payment files. They only know street, building number, postal code, town and country."
+msgstr ""
+
+msgid "Address on payments"
+msgstr ""
+
+msgid "Building number"
+msgstr ""
+
+msgid "Country"
+msgstr ""
+
+msgid "Country code {country} is invalid, it needs two letters (ISO 3166-1)."
+msgstr ""
+
+msgid "Creditor Reference {reference} is invalid: the check digits do not match."
+msgstr ""
+
+msgid "IBAN {iban} has {length} characters, IBANs from {country} have {expected}."
+msgstr ""
+
+msgid "IBAN {iban} is invalid: it must start with a country code and two check digits, followed by 11 to 30 letters or digits."
+msgstr ""
+
+msgid "IBAN {iban} is invalid: the check digits do not match."
+msgstr ""
+
+msgid "Invalid IBAN"
+msgstr ""
+
+msgid "Invalid QR-IBAN"
+msgstr ""
+
+msgid "Only for QR-bills with a QR reference. Your bank assigns it in addition to the IBAN."
+msgstr ""
+
+msgid "Postal code"
+msgstr ""
+
+msgid "QR reference prefix (BESR-ID)"
+msgstr ""
+
+msgid "QR reference {reference} is invalid: the check digit does not match."
+msgstr ""
+
+msgid "QR-IBAN"
+msgstr ""
+
+msgid "Some banks require every QR reference to start with a number they assign. Leave empty if yours does not."
+msgstr ""
+
+msgid "Street"
+msgstr ""
+
+msgid "Swiss and Liechtenstein postal codes have four digits, {postal_code} does not."
+msgstr ""
+
+msgid "The country is missing in the address of {name}."
+msgstr ""
+
+msgid "The name is missing in the address."
+msgstr ""
+
+msgid "The name {name} is too long: {length} characters, at most {limit} are allowed."
+msgstr ""
+
+msgid "The postal code is missing in the address of {name}."
+msgstr ""
+
+msgid "The postal code {postal_code} is too long: at most {limit} characters are allowed."
+msgstr ""
+
+msgid "The QR reference prefix consists of digits only, at most {0} of them."
+msgstr ""
+
+msgid "The street {street} is too long: {length} characters, at most {limit} are allowed."
+msgstr ""
+
+msgid "The town is missing in the address of {name}."
+msgstr ""
+
+msgid "The town {town} is too long: {length} characters, at most {limit} are allowed."
+msgstr ""
+
+msgid "This is how the address appears on QR-bills and in payment files."
+msgstr ""
+
+msgid "Town"
+msgstr ""
+
+msgid "{0} is a QR-IBAN. It only works together with a QR reference, so it belongs in the field QR-IBAN, not in the field IBAN."
+msgstr ""
+
+msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
+msgstr ""
