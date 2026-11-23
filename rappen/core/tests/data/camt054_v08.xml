@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Made-up notification for tests: details of the batch entry ENTRY-0005 of camt053_v08.xml. -->
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.054.001.08">
+  <BkToCstmrDbtCdtNtfctn>
+    <GrpHdr>
+      <MsgId>NTFCTN-20261123-0001</MsgId>
+      <CreDtTm>2026-11-23T18:00:00+01:00</CreDtTm>
+    </GrpHdr>
+    <Ntfctn>
+      <Id>NTFCTN-20261123-0001-1</Id>
+      <Acct>
+        <Id><IBAN>CH9300762011623852957</IBAN></Id>
+        <Ccy>CHF</Ccy>
+      </Acct>
+      <Ntry>
+        <Amt Ccy="CHF">300.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-11-23</Dt></BookgDt>
+        <ValDt><Dt>2026-11-23</Dt></ValDt>
+        <AcctSvcrRef>ENTRY-0005</AcctSvcrRef>
+        <BkTxCd><Domn><Cd>PMNT</Cd><Fmly><Cd>RCDT</Cd><SubFmlyCd>VCOM</SubFmlyCd></Fmly></Domn></BkTxCd>
+        <NtryDtls>
+          <Btch><NbOfTxs>3</NbOfTxs></Btch>
+          <TxDtls>
+            <Refs><AcctSvcrRef>TX-0051</AcctSvcrRef></Refs>
+            <Amt Ccy="CHF">100.00</Amt>
+            <CdtDbtInd>CRDT</CdtDbtInd>
+            <RmtInf><Strd><CdtrRefInf><Tp><CdOrPrtry><Prtry>QRR</Prtry></CdOrPrtry></Tp><Ref>000000000000000000000000011</Ref></CdtrRefInf></Strd></RmtInf>
+          </TxDtls>
+          <TxDtls>
+            <Refs><AcctSvcrRef>TX-0052</AcctSvcrRef></Refs>
+            <Amt Ccy="CHF">120.00</Amt>
+            <CdtDbtInd>CRDT</CdtDbtInd>
+            <RmtInf><Strd><CdtrRefInf><Tp><CdOrPrtry><Prtry>QRR</Prtry></CdOrPrtry></Tp><Ref>210000000003139471430009018</Ref></CdtrRefInf></Strd></RmtInf>
+          </TxDtls>
+          <TxDtls>
+            <Refs><AcctSvcrRef>TX-0053</AcctSvcrRef></Refs>
+            <AmtDtls><TxAmt><Amt Ccy="CHF">80.00</Amt></TxAmt></AmtDtls>
+            <CdtDbtInd>CRDT</CdtDbtInd>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+    </Ntfctn>
+  </BkToCstmrDbtCdtNtfctn>
+</Document>

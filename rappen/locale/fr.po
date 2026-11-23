@@ -41,11 +41,17 @@ msgstr "Une QR-facture nécessite un IBAN suisse ou liechtensteinois, {iban} pro
 msgid "A QR-IBAN can only be used with a QR reference (QRR)."
 msgstr "Un QR-IBAN ne peut être utilisé qu'avec une référence QR (QRR)."
 
+msgid "A transaction of entry {reference} has no amount."
+msgstr "Une transaction de l'écriture {reference} n'a pas de montant."
+
 msgid "Address line 2 ({0}) does not appear on QR-bills and in payment files. They only know street, building number, postal code, town and country."
 msgstr "La ligne d'adresse 2 ({0}) n'apparaît pas sur les QR-factures ni dans les fichiers de paiement. Ceux-ci ne connaissent que la rue, le numéro, le numéro postal, la localité et le pays."
 
 msgid "Address on payments"
 msgstr "Adresse sur les paiements"
+
+msgid "Already imported"
+msgstr "Déjà importé"
 
 msgctxt "Rappen"
 msgid "Amount"
@@ -58,13 +64,58 @@ msgstr "Montant dû"
 msgid "Bank account for the QR-bill"
 msgstr "Compte bancaire pour la QR-facture"
 
+msgid "Bank Account {0} does not belong to company {1}."
+msgstr "Le compte bancaire {0} n'appartient pas à l'entreprise {1}."
+
+msgid "Bank entry reference"
+msgstr "Référence de l'écriture bancaire"
+
+msgid "Bank Transaction {0} has no matching document."
+msgstr "La transaction bancaire {0} n'a pas de document correspondant."
+
+msgid "Bank Transaction {0} is reconciled already."
+msgstr "La transaction bancaire {0} est déjà rapprochée."
+
+msgid "Bank transactions created"
+msgstr "Transactions bancaires créées"
+
+msgid "Batch of {0} payments"
+msgstr "Écriture collective de {0} paiements"
+
+msgid "Book exact matches automatically"
+msgstr "Comptabiliser automatiquement les correspondances exactes"
+
+msgid "Book payment against {0}"
+msgstr "Comptabiliser le paiement sur {0}"
+
+msgid "Booked automatically"
+msgstr "Comptabilisées automatiquement"
+
+msgid "Booking date"
+msgstr "Date de comptabilisation"
+
 msgctxt "Rappen"
 msgid "Building number"
 msgstr "Numéro"
 
+msgid "camt file"
+msgstr "Fichier camt"
+
+msgid "CAMT Import"
+msgstr "Import camt"
+
+msgid "CAMT Import Transaction"
+msgstr "Transaction de l'import camt"
+
+msgid "camt.053 (statement) or camt.054 (notification), version 001.04 to 001.08, as XML."
+msgstr "camt.053 (relevé de compte) ou camt.054 (avis de crédit ou de débit), version 001.04 à 001.08, en XML."
+
 msgctxt "Rappen"
 msgid "Cancelled"
 msgstr "Annulé"
+
+msgid "Closing balance"
+msgstr "Solde final"
 
 msgctxt "Rappen"
 msgid "Country"
@@ -96,6 +147,9 @@ msgctxt "Rappen"
 msgid "Discount"
 msgstr "Rabais"
 
+msgid "Document type"
+msgstr "Type de document"
+
 msgctxt "Rappen"
 msgid "Draft"
 msgstr "Brouillon"
@@ -115,6 +169,12 @@ msgstr "Rappel {0}"
 msgid "Empty: the company's default bank account."
 msgstr "Vide : le compte bancaire par défaut de l'entreprise."
 
+msgid "Entry {reference} has no booking date."
+msgstr "L'écriture {reference} n'a pas de date de comptabilisation."
+
+msgid "Found from the IBAN in the file if left empty."
+msgstr "Déterminé à partir de l'IBAN du fichier s'il est vide."
+
 msgid "IBAN {iban} has {length} characters, IBANs from {country} have {expected}."
 msgstr "L'IBAN {iban} compte {length} caractères, les IBAN du pays {country} en comptent {expected}."
 
@@ -123,6 +183,12 @@ msgstr "L'IBAN {iban} n'est pas valable : il commence par le code du pays et deu
 
 msgid "IBAN {iban} is invalid: the check digits do not match."
 msgstr "L'IBAN {iban} n'est pas valable : les chiffres de contrôle ne correspondent pas."
+
+msgid "Imported with errors"
+msgstr "Importé avec erreurs"
+
+msgid "Incoming payments"
+msgstr "Paiements entrants"
 
 msgctxt "Rappen"
 msgid "Interest"
@@ -142,6 +208,9 @@ msgctxt "Rappen"
 msgid "Invoice number"
 msgstr "Numéro de facture"
 
+msgid "Invoice or dunning with the payment reference of this transaction."
+msgstr "Facture ou rappel portant la référence de paiement de cette transaction."
+
 msgctxt "Rappen"
 msgid "Invoice {0}"
 msgstr "Facture {0}"
@@ -150,12 +219,21 @@ msgctxt "Rappen"
 msgid "Item"
 msgstr "Article"
 
+msgid "Matching document"
+msgstr "Document correspondant"
+
 msgid "Message and billing information of a QR-bill have at most {limit} characters together, here they have {length}."
 msgstr "Le message et les informations de facture d'une QR-facture comptent ensemble au plus {limit} caractères, ici {length}."
+
+msgid "Negative for debits."
+msgstr "Négatif pour les débits."
 
 msgctxt "Rappen"
 msgid "Net total"
 msgstr "Total net"
+
+msgid "No bank account of company {0} has the IBAN {1}. Create it or enter the IBAN on the Bank Account."
+msgstr "Aucun compte bancaire de l'entreprise {0} n'a l'IBAN {1}. Créez-le ou saisissez l'IBAN sur le compte bancaire."
 
 msgid "No company bank account with an IBAN is set for the QR-bill."
 msgstr "Aucun compte bancaire de l'entreprise avec IBAN n'est défini pour la QR-facture."
@@ -166,6 +244,12 @@ msgstr "Numéro"
 
 msgid "Only for QR-bills with a QR reference. Your bank assigns it in addition to the IBAN."
 msgstr "Uniquement pour les QR-factures avec référence QR. Votre banque l'attribue en plus de l'IBAN."
+
+msgid "Only incoming payments can be booked against an invoice or dunning."
+msgstr "Seuls les paiements entrants peuvent être comptabilisés sur une facture ou un rappel."
+
+msgid "Opening balance"
+msgstr "Solde initial"
 
 msgctxt "Rappen"
 msgid "Outstanding"
@@ -178,6 +262,9 @@ msgstr "Payé d'avance"
 msgctxt "Rappen"
 msgid "Payable by {0}."
 msgstr "Payable jusqu'au {0}."
+
+msgid "Payment Entry {0} created"
+msgstr "Paiement {0} créé"
 
 msgid "Payment reference"
 msgstr "Référence de paiement"
@@ -209,8 +296,21 @@ msgctxt "Rappen"
 msgid "Quantity"
 msgstr "Quantité"
 
+msgid "Rappen"
+msgstr "Rappen"
+
+msgid "Rappen Settings"
+msgstr "Paramètres Rappen"
+
 msgid "Reference type"
 msgstr "Type de référence"
+
+msgid "Replaced batch"
+msgstr "Écriture collective remplacée"
+
+msgctxt "Rappen"
+msgid "Reversal"
+msgstr "Contre-passation"
 
 msgctxt "Rappen"
 msgid "Rounding"
@@ -218,6 +318,12 @@ msgstr "Arrondi"
 
 msgid "Some banks require every QR reference to start with a number they assign. Leave empty if yours does not."
 msgstr "Certaines banques exigent que chaque référence QR commence par un numéro qu'elles attribuent. Laisser vide si ce n'est pas le cas de la vôtre."
+
+msgid "Statement"
+msgstr "Relevé"
+
+msgid "Statement {id} has no IBAN for the account."
+msgstr "Le relevé {id} ne contient pas d'IBAN pour le compte."
 
 msgctxt "Rappen"
 msgid "Street"
@@ -232,6 +338,9 @@ msgstr "Le montant d'une QR-facture est compris entre 0.01 et 999999999.99, ce n
 msgid "The amount {amount} is not a number."
 msgstr "Le montant {amount} n'est pas un nombre."
 
+msgid "The batch entry of these payments is reconciled already, so they are not imported again."
+msgstr "L'écriture collective de ces paiements est déjà rapprochée, ils ne sont donc pas importés à nouveau."
+
 msgid "The content of the QR code has {length} characters, at most {limit} are allowed."
 msgstr "Le contenu du code QR compte {length} caractères, {limit} au maximum sont autorisés."
 
@@ -240,6 +349,27 @@ msgstr "Le pays manque dans l'adresse de {name}."
 
 msgid "The creditor is missing in the QR code."
 msgstr "Le créancier manque dans le code QR."
+
+msgid "The file contains a document type declaration, which camt files never have."
+msgstr "Le fichier contient une déclaration de type de document, ce que les fichiers camt n'ont jamais."
+
+msgid "The file contains no statement."
+msgstr "Le fichier ne contient aucun relevé."
+
+msgid "The file contains statements of more than one account."
+msgstr "Le fichier contient des relevés de plusieurs comptes."
+
+msgid "The file does not contain a bank statement or notification."
+msgstr "Le fichier ne contient ni relevé ni avis."
+
+msgid "The file is for the account {0}, but Bank Account {1} has a different IBAN."
+msgstr "Le fichier concerne le compte {0}, mais le compte bancaire {1} a un autre IBAN."
+
+msgid "The file is larger than 50 MB."
+msgstr "Le fichier dépasse 50 Mo."
+
+msgid "The file is not valid XML: {error}"
+msgstr "Le fichier n'est pas un XML valable : {error}"
 
 msgid "The name is missing in the address."
 msgstr "Le nom manque dans l'adresse."
@@ -268,6 +398,9 @@ msgstr "Le préfixe de référence QR ne contient que des chiffres, {0} au maxim
 msgid "The QR-bill uses an unstructured address (type {type}), which is no longer valid. Ask the creditor for a new QR-bill."
 msgstr "La QR-facture utilise une adresse non structurée (type {type}), qui n'est plus valable. Demandez une nouvelle QR-facture au créancier."
 
+msgid "The single payments of this batch were imported already."
+msgstr "Les paiements individuels de cette écriture collective ont déjà été importés."
+
 msgid "The street {street} is too long: {length} characters, at most {limit} are allowed."
 msgstr "La rue {street} est trop longue : {length} caractères, {limit} au maximum sont autorisés."
 
@@ -277,8 +410,14 @@ msgstr "La localité manque dans l'adresse de {name}."
 msgid "The town {town} is too long: {length} characters, at most {limit} are allowed."
 msgstr "La localité {town} est trop longue : {length} caractères, {limit} au maximum sont autorisés."
 
+msgid "This file has been imported already."
+msgstr "Ce fichier a déjà été importé."
+
 msgid "This is how the address appears on QR-bills and in payment files."
 msgstr "Voici comment l'adresse apparaît sur les QR-factures et dans les fichiers de paiement."
+
+msgid "This is not a camt.052, camt.053 or camt.054 file in version 001.04 to 001.08 ({namespace})."
+msgstr "Ce n'est pas un fichier camt.052, camt.053 ou camt.054 en version 001.04 à 001.08 ({namespace})."
 
 msgid "This is not the content of a Swiss QR Code."
 msgstr "Ceci n'est pas le contenu d'un Swiss QR Code."
@@ -298,6 +437,9 @@ msgctxt "Rappen"
 msgid "VAT number"
 msgstr "Numéro TVA"
 
+msgid "When a payment in a camt file carries the reference of an open invoice or dunning and pays exactly the amount due, create the payment entry and reconcile it right away. Everything else stays open in the bank reconciliation."
+msgstr "Lorsqu'un paiement d'un fichier camt porte la référence d'une facture ou d'un rappel ouvert et règle exactement le montant dû, il est comptabilisé et rapproché immédiatement. Tout le reste reste ouvert dans le rapprochement bancaire."
+
 msgctxt "Rappen"
 msgid "Your reference"
 msgstr "Votre référence"
@@ -307,3 +449,9 @@ msgstr "{0} est un QR-IBAN. Il ne fonctionne qu'avec une référence QR et doit 
 
 msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
 msgstr "{iban} n'est pas un QR-IBAN. Un QR-IBAN est un IBAN suisse ou liechtensteinois dont l'identification de l'établissement (positions 5 à 9) est comprise entre 30000 et 31999."
+
+msgid "{value} is not a valid amount."
+msgstr "{value} n'est pas un montant valable."
+
+msgid "{value} is not a valid date."
+msgstr "{value} n'est pas une date valable."

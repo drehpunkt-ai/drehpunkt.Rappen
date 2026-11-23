@@ -149,7 +149,8 @@ jobs:
         run: |
           bench generate-pot-file --app rappen
           python "$GITHUB_WORKSPACE/.github/scripts/check_translations.py" \
-            apps/rappen/rappen/locale/main.pot "$GITHUB_WORKSPACE/rappen/locale"
+            apps/rappen/rappen/locale/main.pot "$GITHUB_WORKSPACE/rappen/locale" \
+            apps/frappe/frappe/locale apps/erpnext/erpnext/locale
 
       - name: Uninstall
         if: matrix.name == 'pinned'

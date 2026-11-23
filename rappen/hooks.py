@@ -20,6 +20,7 @@ before_uninstall = "rappen.install.before_uninstall"
 
 doctype_js = {
 	"Address": "public/js/address.js",
+	"Bank Transaction": "public/js/bank_transaction.js",
 	"Dunning": "public/js/dunning.js",
 	"Sales Invoice": "public/js/sales_invoice.js",
 }

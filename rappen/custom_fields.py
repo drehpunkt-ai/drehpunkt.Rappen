@@ -55,6 +55,42 @@ def _qr_fields(insert_after: str) -> list[dict]:
 
 def get_custom_fields() -> dict[str, list[dict]]:
 	return {
+		"Bank Transaction": [
+			{
+				"fieldname": "rappen_document_type",
+				"label": "Document type",
+				"fieldtype": "Link",
+				"options": "DocType",
+				"insert_after": "reference_number",
+				"read_only": 1,
+				"hidden": 1,
+			},
+			{
+				"fieldname": "rappen_document",
+				"label": "Matching document",
+				"fieldtype": "Dynamic Link",
+				"options": "rappen_document_type",
+				"insert_after": "rappen_document_type",
+				"read_only": 1,
+				"description": "Invoice or dunning with the payment reference of this transaction.",
+			},
+			{
+				"fieldname": "rappen_entry_reference",
+				"label": "Bank entry reference",
+				"fieldtype": "Data",
+				"insert_after": "transaction_id",
+				"read_only": 1,
+				"search_index": 1,
+			},
+			{
+				"fieldname": "rappen_camt_import",
+				"label": "CAMT Import",
+				"fieldtype": "Link",
+				"options": "CAMT Import",
+				"insert_after": "rappen_entry_reference",
+				"read_only": 1,
+			},
+		],
 		"Sales Invoice": _qr_fields(insert_after="account_for_change_amount"),
 		"Dunning": _qr_fields(insert_after="grand_total"),
 		"Bank Account": [

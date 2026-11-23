@@ -41,10 +41,16 @@ msgstr ""
 msgid "A QR-IBAN can only be used with a QR reference (QRR)."
 msgstr ""
 
+msgid "A transaction of entry {reference} has no amount."
+msgstr ""
+
 msgid "Address line 2 ({0}) does not appear on QR-bills and in payment files. They only know street, building number, postal code, town and country."
 msgstr ""
 
 msgid "Address on payments"
+msgstr ""
+
+msgid "Already imported"
 msgstr ""
 
 msgctxt "Rappen"
@@ -58,12 +64,57 @@ msgstr ""
 msgid "Bank account for the QR-bill"
 msgstr ""
 
+msgid "Bank Account {0} does not belong to company {1}."
+msgstr ""
+
+msgid "Bank entry reference"
+msgstr ""
+
+msgid "Bank Transaction {0} has no matching document."
+msgstr ""
+
+msgid "Bank Transaction {0} is reconciled already."
+msgstr ""
+
+msgid "Bank transactions created"
+msgstr ""
+
+msgid "Batch of {0} payments"
+msgstr ""
+
+msgid "Book exact matches automatically"
+msgstr ""
+
+msgid "Book payment against {0}"
+msgstr ""
+
+msgid "Booked automatically"
+msgstr ""
+
+msgid "Booking date"
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Building number"
 msgstr ""
 
+msgid "camt file"
+msgstr ""
+
+msgid "CAMT Import"
+msgstr ""
+
+msgid "CAMT Import Transaction"
+msgstr ""
+
+msgid "camt.053 (statement) or camt.054 (notification), version 001.04 to 001.08, as XML."
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Cancelled"
+msgstr ""
+
+msgid "Closing balance"
 msgstr ""
 
 msgctxt "Rappen"
@@ -96,6 +147,9 @@ msgctxt "Rappen"
 msgid "Discount"
 msgstr ""
 
+msgid "Document type"
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Draft"
 msgstr ""
@@ -115,6 +169,12 @@ msgstr ""
 msgid "Empty: the company's default bank account."
 msgstr ""
 
+msgid "Entry {reference} has no booking date."
+msgstr ""
+
+msgid "Found from the IBAN in the file if left empty."
+msgstr ""
+
 msgid "IBAN {iban} has {length} characters, IBANs from {country} have {expected}."
 msgstr ""
 
@@ -122,6 +182,12 @@ msgid "IBAN {iban} is invalid: it must start with a country code and two check d
 msgstr ""
 
 msgid "IBAN {iban} is invalid: the check digits do not match."
+msgstr ""
+
+msgid "Imported with errors"
+msgstr ""
+
+msgid "Incoming payments"
 msgstr ""
 
 msgctxt "Rappen"
@@ -142,6 +208,9 @@ msgctxt "Rappen"
 msgid "Invoice number"
 msgstr ""
 
+msgid "Invoice or dunning with the payment reference of this transaction."
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Invoice {0}"
 msgstr ""
@@ -150,11 +219,20 @@ msgctxt "Rappen"
 msgid "Item"
 msgstr ""
 
+msgid "Matching document"
+msgstr ""
+
 msgid "Message and billing information of a QR-bill have at most {limit} characters together, here they have {length}."
+msgstr ""
+
+msgid "Negative for debits."
 msgstr ""
 
 msgctxt "Rappen"
 msgid "Net total"
+msgstr ""
+
+msgid "No bank account of company {0} has the IBAN {1}. Create it or enter the IBAN on the Bank Account."
 msgstr ""
 
 msgid "No company bank account with an IBAN is set for the QR-bill."
@@ -167,6 +245,12 @@ msgstr ""
 msgid "Only for QR-bills with a QR reference. Your bank assigns it in addition to the IBAN."
 msgstr ""
 
+msgid "Only incoming payments can be booked against an invoice or dunning."
+msgstr ""
+
+msgid "Opening balance"
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Outstanding"
 msgstr ""
@@ -177,6 +261,9 @@ msgstr ""
 
 msgctxt "Rappen"
 msgid "Payable by {0}."
+msgstr ""
+
+msgid "Payment Entry {0} created"
 msgstr ""
 
 msgid "Payment reference"
@@ -209,7 +296,20 @@ msgctxt "Rappen"
 msgid "Quantity"
 msgstr ""
 
+msgid "Rappen"
+msgstr ""
+
+msgid "Rappen Settings"
+msgstr ""
+
 msgid "Reference type"
+msgstr ""
+
+msgid "Replaced batch"
+msgstr ""
+
+msgctxt "Rappen"
+msgid "Reversal"
 msgstr ""
 
 msgctxt "Rappen"
@@ -217,6 +317,12 @@ msgid "Rounding"
 msgstr ""
 
 msgid "Some banks require every QR reference to start with a number they assign. Leave empty if yours does not."
+msgstr ""
+
+msgid "Statement"
+msgstr ""
+
+msgid "Statement {id} has no IBAN for the account."
 msgstr ""
 
 msgctxt "Rappen"
@@ -232,6 +338,9 @@ msgstr ""
 msgid "The amount {amount} is not a number."
 msgstr ""
 
+msgid "The batch entry of these payments is reconciled already, so they are not imported again."
+msgstr ""
+
 msgid "The content of the QR code has {length} characters, at most {limit} are allowed."
 msgstr ""
 
@@ -239,6 +348,27 @@ msgid "The country is missing in the address of {name}."
 msgstr ""
 
 msgid "The creditor is missing in the QR code."
+msgstr ""
+
+msgid "The file contains a document type declaration, which camt files never have."
+msgstr ""
+
+msgid "The file contains no statement."
+msgstr ""
+
+msgid "The file contains statements of more than one account."
+msgstr ""
+
+msgid "The file does not contain a bank statement or notification."
+msgstr ""
+
+msgid "The file is for the account {0}, but Bank Account {1} has a different IBAN."
+msgstr ""
+
+msgid "The file is larger than 50 MB."
+msgstr ""
+
+msgid "The file is not valid XML: {error}"
 msgstr ""
 
 msgid "The name is missing in the address."
@@ -268,6 +398,9 @@ msgstr ""
 msgid "The QR-bill uses an unstructured address (type {type}), which is no longer valid. Ask the creditor for a new QR-bill."
 msgstr ""
 
+msgid "The single payments of this batch were imported already."
+msgstr ""
+
 msgid "The street {street} is too long: {length} characters, at most {limit} are allowed."
 msgstr ""
 
@@ -277,7 +410,13 @@ msgstr ""
 msgid "The town {town} is too long: {length} characters, at most {limit} are allowed."
 msgstr ""
 
+msgid "This file has been imported already."
+msgstr ""
+
 msgid "This is how the address appears on QR-bills and in payment files."
+msgstr ""
+
+msgid "This is not a camt.052, camt.053 or camt.054 file in version 001.04 to 001.08 ({namespace})."
 msgstr ""
 
 msgid "This is not the content of a Swiss QR Code."
@@ -298,6 +437,9 @@ msgctxt "Rappen"
 msgid "VAT number"
 msgstr ""
 
+msgid "When a payment in a camt file carries the reference of an open invoice or dunning and pays exactly the amount due, create the payment entry and reconcile it right away. Everything else stays open in the bank reconciliation."
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Your reference"
 msgstr ""
@@ -306,4 +448,10 @@ msgid "{0} is a QR-IBAN. It only works together with a QR reference, so it belon
 msgstr ""
 
 msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
+msgstr ""
+
+msgid "{value} is not a valid amount."
+msgstr ""
+
+msgid "{value} is not a valid date."
 msgstr ""

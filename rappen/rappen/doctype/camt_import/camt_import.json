@@ -1,0 +1,219 @@
+{
+ "actions": [],
+ "autoname": "CAMT-.YYYY.-.#####",
+ "creation": "2026-11-23 23:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "bank_account",
+  "file",
+  "column_break_status",
+  "status",
+  "kind",
+  "message_id",
+  "statement_section",
+  "from_date",
+  "to_date",
+  "column_break_balance",
+  "currency",
+  "opening_balance",
+  "closing_balance",
+  "result_section",
+  "created",
+  "booked",
+  "column_break_counts",
+  "duplicates",
+  "errors",
+  "transactions_section",
+  "transactions",
+  "error_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "description": "Found from the IBAN in the file if left empty.",
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Bank Account"
+  },
+  {
+   "description": "camt.053 (statement) or camt.054 (notification), version 001.04 to 001.08, as XML.",
+   "fieldname": "file",
+   "fieldtype": "Attach",
+   "label": "camt file",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nImported\nImported with errors\nFailed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "kind",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Kind",
+   "read_only": 1
+  },
+  {
+   "fieldname": "message_id",
+   "fieldtype": "Data",
+   "label": "Message ID",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status != 'Draft'",
+   "fieldname": "statement_section",
+   "fieldtype": "Section Break",
+   "label": "Statement"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From",
+   "read_only": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_balance",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "opening_balance",
+   "fieldtype": "Currency",
+   "label": "Opening balance",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "closing_balance",
+   "fieldtype": "Currency",
+   "label": "Closing balance",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status != 'Draft'",
+   "fieldname": "result_section",
+   "fieldtype": "Section Break",
+   "label": "Result"
+  },
+  {
+   "fieldname": "created",
+   "fieldtype": "Int",
+   "label": "Bank transactions created",
+   "read_only": 1
+  },
+  {
+   "fieldname": "booked",
+   "fieldtype": "Int",
+   "label": "Booked automatically",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_counts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duplicates",
+   "fieldtype": "Int",
+   "label": "Already imported",
+   "read_only": 1
+  },
+  {
+   "fieldname": "errors",
+   "fieldtype": "Int",
+   "label": "Errors",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status != 'Draft'",
+   "fieldname": "transactions_section",
+   "fieldtype": "Section Break",
+   "label": "Transactions"
+  },
+  {
+   "fieldname": "transactions",
+   "fieldtype": "Table",
+   "label": "Transactions",
+   "options": "CAMT Import Transaction",
+   "read_only": 1
+  },
+  {
+   "depends_on": "error_log",
+   "fieldname": "error_log",
+   "fieldtype": "Small Text",
+   "label": "Error",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-23 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Rappen",
+ "name": "CAMT Import",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "kind",
+ "track_changes": 1
+}

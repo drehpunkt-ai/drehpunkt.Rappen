@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Made-up statement in the older version 001.04 for tests. -->
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.04">
+  <BkToCstmrStmt>
+    <GrpHdr><MsgId>OLD-0001</MsgId><CreDtTm>2026-06-30T20:00:00</CreDtTm></GrpHdr>
+    <Stmt>
+      <Id>OLD-0001-1</Id>
+      <Acct><Id><IBAN>CH93 0076 2011 6238 5295 7</IBAN></Id><Ccy>CHF</Ccy></Acct>
+      <Ntry>
+        <Amt Ccy="CHF">42.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts>BOOK</Sts>
+        <BookgDt><Dt>2026-06-30</Dt></BookgDt>
+        <ValDt><Dt>2026-06-30</Dt></ValDt>
+        <AcctSvcrRef>OLD-ENTRY-1</AcctSvcrRef>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><EndToEndId>E2E-42</EndToEndId></Refs>
+            <AmtDtls><TxAmt><Amt Ccy="CHF">42.00</Amt></TxAmt></AmtDtls>
+            <RltdPties><Dbtr><Nm>Hans Beispiel</Nm></Dbtr></RltdPties>
+            <RmtInf><Ustrd>Mitgliederbeitrag</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+    </Stmt>
+  </BkToCstmrStmt>
+</Document>

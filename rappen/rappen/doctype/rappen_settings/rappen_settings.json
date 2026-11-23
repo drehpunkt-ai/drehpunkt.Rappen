@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "creation": "2026-11-23 23:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "incoming_section",
+  "book_exact_matches"
+ ],
+ "fields": [
+  {
+   "fieldname": "incoming_section",
+   "fieldtype": "Section Break",
+   "label": "Incoming payments"
+  },
+  {
+   "default": "1",
+   "description": "When a payment in a camt file carries the reference of an open invoice or dunning and pays exactly the amount due, create the payment entry and reconcile it right away. Everything else stays open in the bank reconciliation.",
+   "fieldname": "book_exact_matches",
+   "fieldtype": "Check",
+   "label": "Book exact matches automatically"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-11-23 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Rappen",
+ "name": "Rappen Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

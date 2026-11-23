@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Made-up statement for tests. IBANs and references are samples of SIX and ISO 11649. -->
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.08">
+  <BkToCstmrStmt>
+    <GrpHdr>
+      <MsgId>STMT-20261123-0001</MsgId>
+      <CreDtTm>2026-11-24T06:00:00+01:00</CreDtTm>
+    </GrpHdr>
+    <Stmt>
+      <Id>STMT-20261123-0001-1</Id>
+      <ElctrncSeqNb>212</ElctrncSeqNb>
+      <CreDtTm>2026-11-24T06:00:00+01:00</CreDtTm>
+      <FrToDt>
+        <FrDtTm>2026-11-23T00:00:00+01:00</FrDtTm>
+        <ToDtTm>2026-11-23T23:59:59+01:00</ToDtTm>
+      </FrToDt>
+      <Acct>
+        <Id><IBAN>CH9300762011623852957</IBAN></Id>
+        <Ccy>CHF</Ccy>
+      </Acct>
+      <Bal>
+        <Tp><CdOrPrtry><Cd>OPBD</Cd></CdOrPrtry></Tp>
+        <Amt Ccy="CHF">10000.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Dt><Dt>2026-11-23</Dt></Dt>
+      </Bal>
+      <Bal>
+        <Tp><CdOrPrtry><Cd>CLBD</Cd></CdOrPrtry></Tp>
+        <Amt Ccy="CHF">11899.75</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Dt><Dt>2026-11-23</Dt></Dt>
+      </Bal>
+      <Ntry>
+        <Amt Ccy="CHF">1949.75</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-11-23</Dt></BookgDt>
+        <ValDt><Dt>2026-11-23</Dt></ValDt>
+        <AcctSvcrRef>ENTRY-0001</AcctSvcrRef>
+        <BkTxCd><Domn><Cd>PMNT</Cd><Fmly><Cd>RCDT</Cd><SubFmlyCd>VCOM</SubFmlyCd></Fmly></Domn></BkTxCd>
+        <NtryDtls>
+          <TxDtls>
+            <Refs>
+              <AcctSvcrRef>TX-0001</AcctSvcrRef>
+              <EndToEndId>NOTPROVIDED</EndToEndId>
+            </Refs>
+            <Amt Ccy="CHF">1949.75</Amt>
+            <CdtDbtInd>CRDT</CdtDbtInd>
+            <RltdPties>
+              <Dbtr><Pty><Nm>Anna Beispiel</Nm></Pty></Dbtr>
+              <DbtrAcct><Id><IBAN>CH56 0483 5012 3456 7800 9</IBAN></Id></DbtrAcct>
+            </RltdPties>
+            <RmtInf>
+              <Strd>
+                <CdtrRefInf>
+                  <Tp><CdOrPrtry><Prtry>QRR</Prtry></CdOrPrtry></Tp>
+                  <Ref>210000000003139471430009017</Ref>
+                </CdtrRefInf>
+              </Strd>
+            </RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="CHF">150.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-11-23</Dt></BookgDt>
+        <ValDt><Dt>2026-11-23</Dt></ValDt>
+        <AcctSvcrRef>ENTRY-0002</AcctSvcrRef>
+        <BkTxCd><Domn><Cd>PMNT</Cd><Fmly><Cd>RCDT</Cd><SubFmlyCd>VCOM</SubFmlyCd></Fmly></Domn></BkTxCd>
+        <NtryDtls>
+          <Btch><NbOfTxs>2</NbOfTxs></Btch>
+          <TxDtls>
+            <Refs><AcctSvcrRef>TX-0002</AcctSvcrRef></Refs>
+            <Amt Ccy="CHF">100.00</Amt>
+            <CdtDbtInd>CRDT</CdtDbtInd>
+            <RltdPties><Dbtr><Pty><Nm>Max Muster GmbH</Nm></Pty></Dbtr></RltdPties>
+            <RmtInf>
+              <Strd>
+                <CdtrRefInf>
+                  <Tp><CdOrPrtry><Cd>SCOR</Cd></CdOrPrtry></Tp>
+                  <Ref>RF18539007547034</Ref>
+                </CdtrRefInf>
+              </Strd>
+            </RmtInf>
+          </TxDtls>
+          <TxDtls>
+            <Refs><AcctSvcrRef>TX-0003</AcctSvcrRef></Refs>
+            <Amt Ccy="CHF">50.00</Amt>
+            <CdtDbtInd>CRDT</CdtDbtInd>
+            <RmtInf><Ustrd>Spende</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="CHF">500.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-11-23</Dt></BookgDt>
+        <ValDt><Dt>2026-11-23</Dt></ValDt>
+        <AcctSvcrRef>ENTRY-0003</AcctSvcrRef>
+        <BkTxCd><Domn><Cd>PMNT</Cd><Fmly><Cd>ICDT</Cd><SubFmlyCd>DMCT</SubFmlyCd></Fmly></Domn></BkTxCd>
+        <NtryDtls>
+          <TxDtls>
+            <Refs>
+              <AcctSvcrRef>TX-0004</AcctSvcrRef>
+              <EndToEndId>PP-2026-00001-1</EndToEndId>
+            </Refs>
+            <Amt Ccy="CHF">500.00</Amt>
+            <CdtDbtInd>DBIT</CdtDbtInd>
+            <Chrgs>
+              <Rcrd>
+                <Amt Ccy="CHF">0.50</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <ChrgInclInd>true</ChrgInclInd>
+              </Rcrd>
+            </Chrgs>
+            <RltdPties>
+              <Cdtr><Pty><Nm>Lieferant AG</Nm></Pty></Cdtr>
+              <CdtrAcct><Id><IBAN>DE89370400440532013000</IBAN></Id></CdtrAcct>
+            </RltdPties>
+            <RmtInf><Ustrd>Rechnung 4711</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="CHF">80.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>PDNG</Cd></Sts>
+        <BookgDt><Dt>2026-11-23</Dt></BookgDt>
+        <AcctSvcrRef>ENTRY-PENDING</AcctSvcrRef>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="CHF">300.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-11-23</Dt></BookgDt>
+        <ValDt><Dt>2026-11-23</Dt></ValDt>
+        <AcctSvcrRef>ENTRY-0005</AcctSvcrRef>
+        <BkTxCd><Domn><Cd>PMNT</Cd><Fmly><Cd>RCDT</Cd><SubFmlyCd>VCOM</SubFmlyCd></Fmly></Domn></BkTxCd>
+        <NtryDtls><Btch><NbOfTxs>3</NbOfTxs></Btch></NtryDtls>
+        <AddtlNtryInf>Sammelgutschrift QR-Rechnungen</AddtlNtryInf>
+      </Ntry>
+    </Stmt>
+  </BkToCstmrStmt>
+</Document>

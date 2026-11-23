@@ -52,13 +52,14 @@ def company_address(company: str) -> str:
 	return address.name
 
 
-def ledger_bank_account(company: str) -> str:
-	account = frappe.db.get_value(
-		"Account", {"company": company, "account_type": "Bank", "is_group": 0}, "name"
-	)
-	if account:
-		return account
+def ledger_bank_account(company: str, name: str) -> str:
+	"""A ledger account of type Bank for one Bank Account (ERPNext allows one Bank Account per ledger account)."""
+	existing = frappe.db.get_value("Account", {"company": company, "account_name": name}, "name")
+	if existing:
+		return existing
 	parent = frappe.db.get_value(
+		"Account", {"company": company, "account_type": "Bank", "is_group": 0}, "parent_account"
+	) or frappe.db.get_value(
 		"Account",
 		{"company": company, "root_type": "Asset", "is_group": 1, "parent_account": ("is", "set")},
 		"name",
@@ -67,7 +68,7 @@ def ledger_bank_account(company: str) -> str:
 		frappe.get_doc(
 			{
 				"doctype": "Account",
-				"account_name": BANK,
+				"account_name": name,
 				"parent_account": parent,
 				"company": company,
 				"account_type": "Bank",
@@ -95,7 +96,7 @@ def bank_account(
 				"bank": BANK,
 				"is_company_account": 1,
 				"company": company,
-				"account": ledger_bank_account(company),
+				"account": ledger_bank_account(company, name),
 				"iban": iban,
 				"rappen_qr_iban": qr_iban,
 				"is_default": int(default),
