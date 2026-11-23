@@ -15,6 +15,9 @@ after_install = "rappen.install.after_install"
 after_migrate = "rappen.install.after_migrate"
 before_uninstall = "rappen.install.before_uninstall"
 
+# Swiss companies get the account types and defaults that ERPNext's Swiss chart lacks
+setup_wizard_complete = "rappen.accounts.after_setup_wizard"
+
 # Forms
 # -----
 

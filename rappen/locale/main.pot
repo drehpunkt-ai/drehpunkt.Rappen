@@ -118,10 +118,23 @@ msgid "Closing balance"
 msgstr ""
 
 msgctxt "Rappen"
+msgid "Complete"
+msgstr ""
+
+msgid "Complete Swiss chart of accounts"
+msgstr ""
+
+msgctxt "Rappen"
 msgid "Country"
 msgstr ""
 
 msgid "Country code {country} is invalid, it needs two letters (ISO 3166-1)."
+msgstr ""
+
+msgid "Create Swiss dunning levels"
+msgstr ""
+
+msgid "Created: {0}"
 msgstr ""
 
 msgctxt "Rappen"
@@ -143,6 +156,9 @@ msgctxt "Rappen"
 msgid "Days overdue"
 msgstr ""
 
+msgid "Default interest in percent per year"
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Discount"
 msgstr ""
@@ -159,6 +175,10 @@ msgid "Due date"
 msgstr ""
 
 msgctxt "Rappen"
+msgid "Dunning"
+msgstr ""
+
+msgctxt "Rappen"
 msgid "Dunning fee"
 msgstr ""
 
@@ -170,6 +190,29 @@ msgid "Empty: the company's default bank account."
 msgstr ""
 
 msgid "Entry {reference} has no booking date."
+msgstr ""
+
+msgid "Every payment needs its own end-to-end ID."
+msgstr ""
+
+msgid "Fee for the final dunning"
+msgstr ""
+
+msgid "Fee for the first dunning"
+msgstr ""
+
+msgid "Fee for the payment reminder"
+msgstr ""
+
+msgid "Fees and default interest may only be charged if your customers agreed to them, e.g. in your general terms and conditions."
+msgstr ""
+
+msgctxt "Rappen"
+msgid "Final dunning"
+msgstr ""
+
+msgctxt "Rappen"
+msgid "First dunning"
 msgstr ""
 
 msgid "Found from the IBAN in the file if left empty."
@@ -238,6 +281,9 @@ msgstr ""
 msgid "No company bank account with an IBAN is set for the QR-bill."
 msgstr ""
 
+msgid "Nothing to complete, the chart of accounts is set up already."
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Number"
 msgstr ""
@@ -267,6 +313,22 @@ msgid "Payment Entry {0} created"
 msgstr ""
 
 msgid "Payment reference"
+msgstr ""
+
+msgctxt "Rappen"
+msgid "Payment reminder"
+msgstr ""
+
+msgid "Payment {id} goes to a QR-IBAN and needs the QR reference of the QR-bill."
+msgstr ""
+
+msgid "Payment {id} goes to {country} in {currency}. Rappen pays to Swiss and Liechtenstein IBANs in CHF or EUR and to SEPA countries in EUR."
+msgstr ""
+
+msgid "Payment {id} has a QR reference, which only works with a QR-IBAN."
+msgstr ""
+
+msgid "Payments are made from an IBAN, not from a QR-IBAN."
 msgstr ""
 
 msgctxt "Rappen"
@@ -335,6 +397,9 @@ msgstr ""
 msgid "The amount of a QR-bill is between 0.01 and 999999999.99, {amount} is not."
 msgstr ""
 
+msgid "The amount of payment {id} must be positive."
+msgstr ""
+
 msgid "The amount {amount} is not a number."
 msgstr ""
 
@@ -348,6 +413,9 @@ msgid "The country is missing in the address of {name}."
 msgstr ""
 
 msgid "The creditor is missing in the QR code."
+msgstr ""
+
+msgid "The end-to-end ID {id} needs 1 to 35 letters, digits or separators."
 msgstr ""
 
 msgid "The file contains a document type declaration, which camt files never have."
@@ -371,10 +439,22 @@ msgstr ""
 msgid "The file is not valid XML: {error}"
 msgstr ""
 
+msgid "The generated file does not match the schema {schema}: line {line}, {detail}"
+msgstr ""
+
+msgid "The message ID {id} needs 1 to 35 letters, digits or separators."
+msgstr ""
+
+msgid "The message of payment {id} is longer than 140 characters."
+msgstr ""
+
 msgid "The name is missing in the address."
 msgstr ""
 
 msgid "The name {name} is too long: {length} characters, at most {limit} are allowed."
+msgstr ""
+
+msgid "The payment run contains no payments."
 msgstr ""
 
 msgid "The postal code is missing in the address of {name}."
@@ -445,6 +525,9 @@ msgid "Your reference"
 msgstr ""
 
 msgid "{0} is a QR-IBAN. It only works together with a QR reference, so it belongs in the field QR-IBAN, not in the field IBAN."
+msgstr ""
+
+msgid "{0}: account type {1}"
 msgstr ""
 
 msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."

@@ -7,7 +7,7 @@
 		(_("Customer number", context="Rappen"), doc.customer),
 	]) }}
 
-	<h1>{{ _(doc.dunning_type) | e }}</h1>
+	<h1>{{ rappen_dunning_title(doc) | e }}</h1>
 	{{ status(doc) }}
 
 	{%- if doc.body_text %}<div class="rl-text">{{ doc.body_text }}</div>{% endif %}

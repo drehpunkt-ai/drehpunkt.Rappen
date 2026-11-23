@@ -20,3 +20,10 @@ def rappen_sender_line(doc) -> str:
 	from rappen.qr import sender_line
 
 	return sender_line(doc)
+
+
+def rappen_dunning_title(doc) -> str:
+	"""Title of a dunning letter, e.g. «1. Mahnung»."""
+	from rappen.dunning import dunning_title
+
+	return dunning_title(doc)

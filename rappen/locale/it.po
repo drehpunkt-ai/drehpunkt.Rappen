@@ -118,11 +118,24 @@ msgid "Closing balance"
 msgstr "Saldo finale"
 
 msgctxt "Rappen"
+msgid "Complete"
+msgstr "Completare"
+
+msgid "Complete Swiss chart of accounts"
+msgstr "Completare il piano dei conti svizzero"
+
+msgctxt "Rappen"
 msgid "Country"
 msgstr "Paese"
 
 msgid "Country code {country} is invalid, it needs two letters (ISO 3166-1)."
 msgstr "Il codice del paese {country} non è valido, deve avere due lettere (ISO 3166-1)."
+
+msgid "Create Swiss dunning levels"
+msgstr "Creare i livelli di sollecito svizzeri"
+
+msgid "Created: {0}"
+msgstr "Creato: {0}"
 
 msgctxt "Rappen"
 msgid "Credit note"
@@ -143,6 +156,9 @@ msgctxt "Rappen"
 msgid "Days overdue"
 msgstr "Giorni di ritardo"
 
+msgid "Default interest in percent per year"
+msgstr "Interesse di mora in percento all'anno"
+
 msgctxt "Rappen"
 msgid "Discount"
 msgstr "Sconto"
@@ -159,6 +175,10 @@ msgid "Due date"
 msgstr "Scadenza"
 
 msgctxt "Rappen"
+msgid "Dunning"
+msgstr "Sollecito"
+
+msgctxt "Rappen"
 msgid "Dunning fee"
 msgstr "Spese di sollecito"
 
@@ -171,6 +191,29 @@ msgstr "Vuoto: il conto bancario predefinito dell'azienda."
 
 msgid "Entry {reference} has no booking date."
 msgstr "La registrazione {reference} non ha una data di registrazione."
+
+msgid "Every payment needs its own end-to-end ID."
+msgstr "Ogni pagamento richiede un proprio ID end-to-end."
+
+msgid "Fee for the final dunning"
+msgstr "Spese per l'ultimo sollecito"
+
+msgid "Fee for the first dunning"
+msgstr "Spese per il primo sollecito"
+
+msgid "Fee for the payment reminder"
+msgstr "Spese per il promemoria di pagamento"
+
+msgid "Fees and default interest may only be charged if your customers agreed to them, e.g. in your general terms and conditions."
+msgstr "Le spese e l'interesse di mora possono essere addebitati solo se i clienti li hanno accettati, p. es. nelle condizioni generali."
+
+msgctxt "Rappen"
+msgid "Final dunning"
+msgstr "Ultimo sollecito"
+
+msgctxt "Rappen"
+msgid "First dunning"
+msgstr "Primo sollecito"
 
 msgid "Found from the IBAN in the file if left empty."
 msgstr "Determinato dall'IBAN del file se vuoto."
@@ -238,6 +281,9 @@ msgstr "Nessun conto bancario dell'azienda {0} ha l'IBAN {1}. Crearlo o inserire
 msgid "No company bank account with an IBAN is set for the QR-bill."
 msgstr "Per la QR-fattura non è definito alcun conto bancario dell'azienda con IBAN."
 
+msgid "Nothing to complete, the chart of accounts is set up already."
+msgstr "Niente da completare, il piano dei conti è già configurato."
+
 msgctxt "Rappen"
 msgid "Number"
 msgstr "Numero"
@@ -268,6 +314,22 @@ msgstr "Pagamento {0} creato"
 
 msgid "Payment reference"
 msgstr "Riferimento di pagamento"
+
+msgctxt "Rappen"
+msgid "Payment reminder"
+msgstr "Promemoria di pagamento"
+
+msgid "Payment {id} goes to a QR-IBAN and needs the QR reference of the QR-bill."
+msgstr "Il pagamento {id} va verso un QR-IBAN e richiede il riferimento QR della QR-fattura."
+
+msgid "Payment {id} goes to {country} in {currency}. Rappen pays to Swiss and Liechtenstein IBANs in CHF or EUR and to SEPA countries in EUR."
+msgstr "Il pagamento {id} va verso {country} in {currency}. Rappen paga verso IBAN svizzeri e del Liechtenstein in CHF o EUR e verso i paesi SEPA in EUR."
+
+msgid "Payment {id} has a QR reference, which only works with a QR-IBAN."
+msgstr "Il pagamento {id} ha un riferimento QR, che funziona solo con un QR-IBAN."
+
+msgid "Payments are made from an IBAN, not from a QR-IBAN."
+msgstr "I pagamenti partono da un IBAN, non da un QR-IBAN."
 
 msgctxt "Rappen"
 msgid "Postal code"
@@ -335,6 +397,9 @@ msgstr "I numeri postali della Svizzera e del Liechtenstein hanno quattro cifre,
 msgid "The amount of a QR-bill is between 0.01 and 999999999.99, {amount} is not."
 msgstr "L'importo di una QR-fattura è compreso tra 0.01 e 999999999.99, {amount} no."
 
+msgid "The amount of payment {id} must be positive."
+msgstr "L'importo del pagamento {id} deve essere positivo."
+
 msgid "The amount {amount} is not a number."
 msgstr "L'importo {amount} non è un numero."
 
@@ -349,6 +414,9 @@ msgstr "Nell'indirizzo di {name} manca il paese."
 
 msgid "The creditor is missing in the QR code."
 msgstr "Nel codice QR manca il creditore."
+
+msgid "The end-to-end ID {id} needs 1 to 35 letters, digits or separators."
+msgstr "L'ID end-to-end {id} deve avere da 1 a 35 lettere, cifre o separatori."
 
 msgid "The file contains a document type declaration, which camt files never have."
 msgstr "Il file contiene una dichiarazione del tipo di documento, che i file camt non hanno mai."
@@ -371,11 +439,23 @@ msgstr "Il file supera i 50 MB."
 msgid "The file is not valid XML: {error}"
 msgstr "Il file non è un XML valido: {error}"
 
+msgid "The generated file does not match the schema {schema}: line {line}, {detail}"
+msgstr "Il file generato non corrisponde allo schema {schema}: riga {line}, {detail}"
+
+msgid "The message ID {id} needs 1 to 35 letters, digits or separators."
+msgstr "L'ID del messaggio {id} deve avere da 1 a 35 lettere, cifre o separatori."
+
+msgid "The message of payment {id} is longer than 140 characters."
+msgstr "Il messaggio del pagamento {id} supera i 140 caratteri."
+
 msgid "The name is missing in the address."
 msgstr "Nell'indirizzo manca il nome."
 
 msgid "The name {name} is too long: {length} characters, at most {limit} are allowed."
 msgstr "Il nome {name} è troppo lungo: {length} caratteri, ne sono ammessi al massimo {limit}."
+
+msgid "The payment run contains no payments."
+msgstr "Il ciclo di pagamento non contiene pagamenti."
 
 msgid "The postal code is missing in the address of {name}."
 msgstr "Nell'indirizzo di {name} manca il numero postale."
@@ -446,6 +526,9 @@ msgstr "Vostro riferimento"
 
 msgid "{0} is a QR-IBAN. It only works together with a QR reference, so it belongs in the field QR-IBAN, not in the field IBAN."
 msgstr "{0} è un QR-IBAN. Funziona solo insieme a un riferimento QR e va quindi inserito nel campo QR-IBAN, non nel campo IBAN."
+
+msgid "{0}: account type {1}"
+msgstr "{0}: tipo di conto {1}"
 
 msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
 msgstr "{iban} non è un QR-IBAN. Un QR-IBAN è un IBAN svizzero o del Liechtenstein con un'identificazione dell'istituto (posizioni da 5 a 9) compresa tra 30000 e 31999."

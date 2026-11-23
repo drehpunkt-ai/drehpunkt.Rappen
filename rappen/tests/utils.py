@@ -8,6 +8,7 @@ import frappe
 from frappe.utils import add_days, today
 
 IBAN = "CH9300762011623852957"
+OTHER_IBAN = "CH5604835012345678009"
 QR_IBAN = "CH4431999123000889012"
 BANK = "Rappen Testbank"
 CUSTOMER = "Anna Beispiel"
@@ -18,6 +19,9 @@ def swiss_company() -> str:
 	company = frappe.db.get_value("Company", {"country": "Switzerland", "default_currency": "CHF"}, "name")
 	if not company:
 		raise unittest_skip("No company in Switzerland with CHF; run the setup wizard as in the CI workflow.")
+	from rappen.accounts import complete_chart
+
+	complete_chart(company)
 	return company
 
 

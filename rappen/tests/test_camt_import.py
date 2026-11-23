@@ -145,10 +145,9 @@ class TestCamtImport(IntegrationTestCase):
 			frappe.db.set_single_value("Rappen Settings", "book_exact_matches", 1)
 
 	def test_unknown_account(self):
-		content = camt_file(
-			"camt053_v08.xml", {**self.unique(), "CH9300762011623852957": "CH5604835012345678009"}
-		)
-		with self.assertRaisesRegex(frappe.ValidationError, "CH5604835012345678009"):
+		unknown = "CH0804835012345678000"
+		content = camt_file("camt053_v08.xml", {**self.unique(), "CH9300762011623852957": unknown})
+		with self.assertRaisesRegex(frappe.ValidationError, unknown):
 			run_import(self.company, content)
 
 	def test_not_a_camt_file(self):

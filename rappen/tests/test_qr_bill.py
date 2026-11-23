@@ -18,7 +18,7 @@ class TestQrBill(IntegrationTestCase):
 		super().setUpClass()
 		cls.company = utils.swiss_company()
 		cls.qr_account = utils.bank_account(cls.company, "Rappen QR", qr_iban=utils.QR_IBAN, default=True)
-		cls.iban_account = utils.bank_account(cls.company, "Rappen IBAN")
+		cls.iban_account = utils.bank_account(cls.company, "Rappen IBAN", iban=utils.OTHER_IBAN)
 
 	def test_qr_reference_from_invoice_number(self):
 		invoice = utils.sales_invoice(self.company)

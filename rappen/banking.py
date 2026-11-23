@@ -114,6 +114,7 @@ class Importer:
 			frappe.db.rollback(save_point=savepoint)
 			row.result = "Error"
 			row.message = str(error)[:1000]
+			row.bank_transaction = row.payment_entry = row.document_type = row.document = None
 			frappe.clear_last_message()
 
 	def _import(self, transaction: camt.Transaction, bank_account: str, row):
@@ -126,6 +127,7 @@ class Importer:
 			row.result, row.bank_transaction = "Already imported", existing
 			return
 
+		replaced = None
 		if transaction.batch:
 			if frappe.db.exists(
 				"Bank Transaction",
