@@ -44,6 +44,9 @@ msgstr ""
 msgid "A transaction of entry {reference} has no amount."
 msgstr ""
 
+msgid "Acquisition tax"
+msgstr ""
+
 msgid "Address line 2 ({0}) does not appear on QR-bills and in payment files. They only know street, building number, postal code, town and country."
 msgstr ""
 
@@ -61,7 +64,13 @@ msgctxt "Rappen"
 msgid "Amount due"
 msgstr ""
 
+msgid "Amount payable (500) or credit (510, negative)"
+msgstr ""
+
 msgid "Amount to pay"
+msgstr ""
+
+msgid "Annual reconciliation"
 msgstr ""
 
 msgid "Bank account for the QR-bill"
@@ -107,6 +116,9 @@ msgctxt "Rappen"
 msgid "Building number"
 msgstr ""
 
+msgid "Calculate from the books"
+msgstr ""
+
 msgid "camt file"
 msgstr ""
 
@@ -131,6 +143,12 @@ msgid "Complete"
 msgstr ""
 
 msgid "Complete Swiss chart of accounts"
+msgstr ""
+
+msgid "Correction"
+msgstr ""
+
+msgid "Corrections of input tax (415)"
 msgstr ""
 
 msgctxt "Rappen"
@@ -165,7 +183,13 @@ msgctxt "Rappen"
 msgid "Days overdue"
 msgstr ""
 
+msgid "De-taxation (410)"
+msgstr ""
+
 msgid "Default interest in percent per year"
+msgstr ""
+
+msgid "Description of various deductions"
 msgstr ""
 
 msgctxt "Rappen"
@@ -173,6 +197,12 @@ msgid "Discount"
 msgstr ""
 
 msgid "Document type"
+msgstr ""
+
+msgid "Donations (910)"
+msgstr ""
+
+msgid "Download eCH-0217 file"
 msgstr ""
 
 msgid "Download payment file"
@@ -201,6 +231,12 @@ msgctxt "Rappen"
 msgid "Dunning {0}"
 msgstr ""
 
+msgid "eCH-0217 file"
+msgstr ""
+
+msgid "Effective"
+msgstr ""
+
 msgid "Empty: the company's default bank account."
 msgstr ""
 
@@ -216,6 +252,12 @@ msgstr ""
 msgid "Execution date"
 msgstr ""
 
+msgid "Exempt supplies (230)"
+msgstr ""
+
+msgid "Exports (220)"
+msgstr ""
+
 msgid "Fee for the final dunning"
 msgstr ""
 
@@ -228,12 +270,18 @@ msgstr ""
 msgid "Fees and default interest may only be charged if your customers agreed to them, e.g. in your general terms and conditions."
 msgstr ""
 
+msgid "File for the ESTV"
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Final dunning"
 msgstr ""
 
 msgctxt "Rappen"
 msgid "First dunning"
+msgstr ""
+
+msgid "First submission"
 msgstr ""
 
 msgid "Found from the IBAN in the file if left empty."
@@ -261,6 +309,12 @@ msgid "Imported with errors"
 msgstr ""
 
 msgid "Incoming payments"
+msgstr ""
+
+msgid "Input tax on investments and other operating costs (405)"
+msgstr ""
+
+msgid "Input tax on material and services (400)"
 msgstr ""
 
 msgctxt "Rappen"
@@ -307,6 +361,9 @@ msgstr ""
 msgid "Negative for debits."
 msgstr ""
 
+msgid "Net tax rate"
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Net total"
 msgstr ""
@@ -320,6 +377,9 @@ msgstr ""
 msgid "Nothing to complete, the chart of accounts is set up already."
 msgstr ""
 
+msgid "Notification procedure (225)"
+msgstr ""
+
 msgctxt "Rappen"
 msgid "Number"
 msgstr ""
@@ -331,6 +391,12 @@ msgid "Only incoming payments can be booked against an invoice or dunning."
 msgstr ""
 
 msgid "Opening balance"
+msgstr ""
+
+msgid "Opted supplies (205)"
+msgstr ""
+
+msgid "Other flows of funds"
 msgstr ""
 
 msgctxt "Rappen"
@@ -433,6 +499,12 @@ msgstr ""
 msgid "Rappen Settings"
 msgstr ""
 
+msgid "Reductions of consideration (235)"
+msgstr ""
+
+msgid "Reductions of input tax (420)"
+msgstr ""
+
 msgid "Reference type"
 msgstr ""
 
@@ -469,10 +541,22 @@ msgctxt "Rappen"
 msgid "Street"
 msgstr ""
 
+msgid "Subsidies (900)"
+msgstr ""
+
 msgid "Supplier name"
 msgstr ""
 
+msgid "Supplies abroad (221)"
+msgstr ""
+
 msgid "Swiss and Liechtenstein postal codes have four digits, {postal_code} does not."
+msgstr ""
+
+msgid "Taxable supply"
+msgstr ""
+
+msgid "Taxable turnover (299)"
 msgstr ""
 
 msgid "The amount of a QR-bill is between 0.01 and 999999999.99, {amount} is not."
@@ -538,10 +622,16 @@ msgstr ""
 msgid "The name {name} is too long: {length} characters, at most {limit} are allowed."
 msgstr ""
 
+msgid "The net tax rate method allows at most two net tax rates."
+msgstr ""
+
 msgid "The payment proposal contains no payments."
 msgstr ""
 
 msgid "The payment run contains no payments."
+msgstr ""
+
+msgid "The period ends before it starts."
 msgstr ""
 
 msgid "The postal code is missing in the address of {name}."
@@ -577,6 +667,9 @@ msgstr ""
 msgid "The street {street} is too long: {length} characters, at most {limit} are allowed."
 msgstr ""
 
+msgid "The taxable turnover (box 299: {taxable}) must equal the turnover at the tax rates ({at_rates}). Assign the difference to exports, supplies abroad, exempt supplies or deductions."
+msgstr ""
+
 msgid "The town is missing in the address of {name}."
 msgstr ""
 
@@ -605,11 +698,47 @@ msgstr ""
 msgid "Total CHF"
 msgstr ""
 
+msgid "Total consideration (200)"
+msgstr ""
+
+msgid "Total deductions (289)"
+msgstr ""
+
 msgid "Total EUR"
+msgstr ""
+
+msgid "Total input tax (479)"
+msgstr ""
+
+msgid "Total tax (399)"
 msgstr ""
 
 msgctxt "Rappen"
 msgid "Town"
+msgstr ""
+
+msgid "Turnover of invoices without VAT. Assign it to boxes 220 to 280 below."
+msgstr ""
+
+msgid "Turnover per tax rate"
+msgstr ""
+
+msgid "Turnover without VAT, to be assigned"
+msgstr ""
+
+msgid "Type of submission"
+msgstr ""
+
+msgid "UID"
+msgstr ""
+
+msgid "UID {uid} is invalid: the check digit does not match."
+msgstr ""
+
+msgid "Unknown VAT method {method}."
+msgstr ""
+
+msgid "Upload this file in the ESTV ePortal."
 msgstr ""
 
 msgid "Upload this file in your e-banking."
@@ -618,8 +747,26 @@ msgstr ""
 msgid "Used by «Get open purchase invoices»."
 msgstr ""
 
+msgid "Various deductions (280)"
+msgstr ""
+
+msgid "Various deductions (box 280) need a description."
+msgstr ""
+
 msgctxt "Rappen"
 msgid "VAT number"
+msgstr ""
+
+msgid "VAT number of the company, e.g. CHE-123.456.789. Taken from the company's tax ID."
+msgstr ""
+
+msgid "VAT Return"
+msgstr ""
+
+msgid "VAT return not complete"
+msgstr ""
+
+msgid "VAT Return Rate"
 msgstr ""
 
 msgid "When a payment in a camt file carries the reference of an open invoice or dunning and pays exactly the amount due, create the payment entry and reconcile it right away. Everything else stays open in the bank reconciliation."
@@ -636,6 +783,9 @@ msgid "{0}: account type {1}"
 msgstr ""
 
 msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
+msgstr ""
+
+msgid "{uid} is not a UID. A UID looks like CHE-123.456.789."
 msgstr ""
 
 msgid "{value} is not a valid amount."

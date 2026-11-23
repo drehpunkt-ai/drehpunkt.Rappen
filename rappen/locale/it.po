@@ -44,6 +44,9 @@ msgstr "Un QR-IBAN può essere utilizzato solo con un riferimento QR (QRR)."
 msgid "A transaction of entry {reference} has no amount."
 msgstr "Una transazione della registrazione {reference} non ha un importo."
 
+msgid "Acquisition tax"
+msgstr "Imposta sull'acquisto"
+
 msgid "Address line 2 ({0}) does not appear on QR-bills and in payment files. They only know street, building number, postal code, town and country."
 msgstr "La riga d'indirizzo 2 ({0}) non compare sulle QR-fatture né nei file di pagamento. Questi conoscono solo via, numero civico, numero postale, località e paese."
 
@@ -61,8 +64,14 @@ msgctxt "Rappen"
 msgid "Amount due"
 msgstr "Importo dovuto"
 
+msgid "Amount payable (500) or credit (510, negative)"
+msgstr "Importo da pagare (500) o credito (510, negativo)"
+
 msgid "Amount to pay"
 msgstr "Importo da pagare"
+
+msgid "Annual reconciliation"
+msgstr "Concordanza annuale"
 
 msgid "Bank account for the QR-bill"
 msgstr "Conto bancario per la QR-fattura"
@@ -107,6 +116,9 @@ msgctxt "Rappen"
 msgid "Building number"
 msgstr "Numero civico"
 
+msgid "Calculate from the books"
+msgstr "Calcolare dalla contabilità"
+
 msgid "camt file"
 msgstr "File camt"
 
@@ -132,6 +144,12 @@ msgstr "Completare"
 
 msgid "Complete Swiss chart of accounts"
 msgstr "Completare il piano dei conti svizzero"
+
+msgid "Correction"
+msgstr "Rendiconto correttivo"
+
+msgid "Corrections of input tax (415)"
+msgstr "Correzioni della deduzione dell'imposta precedente (415)"
 
 msgctxt "Rappen"
 msgid "Country"
@@ -165,8 +183,14 @@ msgctxt "Rappen"
 msgid "Days overdue"
 msgstr "Giorni di ritardo"
 
+msgid "De-taxation (410)"
+msgstr "Sgravio fiscale successivo (410)"
+
 msgid "Default interest in percent per year"
 msgstr "Interesse di mora in percento all'anno"
+
+msgid "Description of various deductions"
+msgstr "Descrizione dei diversi"
 
 msgctxt "Rappen"
 msgid "Discount"
@@ -174,6 +198,12 @@ msgstr "Sconto"
 
 msgid "Document type"
 msgstr "Tipo di documento"
+
+msgid "Donations (910)"
+msgstr "Doni e dividendi (910)"
+
+msgid "Download eCH-0217 file"
+msgstr "Scaricare il file eCH-0217"
 
 msgid "Download payment file"
 msgstr "Scaricare il file di pagamento"
@@ -201,6 +231,12 @@ msgctxt "Rappen"
 msgid "Dunning {0}"
 msgstr "Sollecito {0}"
 
+msgid "eCH-0217 file"
+msgstr "File eCH-0217"
+
+msgid "Effective"
+msgstr "Effettivo"
+
 msgid "Empty: the company's default bank account."
 msgstr "Vuoto: il conto bancario predefinito dell'azienda."
 
@@ -216,6 +252,12 @@ msgstr "Ogni pagamento richiede un proprio ID end-to-end."
 msgid "Execution date"
 msgstr "Data di esecuzione"
 
+msgid "Exempt supplies (230)"
+msgstr "Prestazioni escluse dall'imposta (230)"
+
+msgid "Exports (220)"
+msgstr "Esportazioni (220)"
+
 msgid "Fee for the final dunning"
 msgstr "Spese per l'ultimo sollecito"
 
@@ -228,6 +270,9 @@ msgstr "Spese per il promemoria di pagamento"
 msgid "Fees and default interest may only be charged if your customers agreed to them, e.g. in your general terms and conditions."
 msgstr "Le spese e l'interesse di mora possono essere addebitati solo se i clienti li hanno accettati, p. es. nelle condizioni generali."
 
+msgid "File for the ESTV"
+msgstr "File per l'AFC"
+
 msgctxt "Rappen"
 msgid "Final dunning"
 msgstr "Ultimo sollecito"
@@ -235,6 +280,9 @@ msgstr "Ultimo sollecito"
 msgctxt "Rappen"
 msgid "First dunning"
 msgstr "Primo sollecito"
+
+msgid "First submission"
+msgstr "Primo inoltro"
 
 msgid "Found from the IBAN in the file if left empty."
 msgstr "Determinato dall'IBAN del file se vuoto."
@@ -262,6 +310,12 @@ msgstr "Importato con errori"
 
 msgid "Incoming payments"
 msgstr "Pagamenti in entrata"
+
+msgid "Input tax on investments and other operating costs (405)"
+msgstr "Imposta precedente sugli investimenti e altri costi d'esercizio (405)"
+
+msgid "Input tax on material and services (400)"
+msgstr "Imposta precedente sul costo del materiale e delle prestazioni di servizi (400)"
 
 msgctxt "Rappen"
 msgid "Interest"
@@ -307,6 +361,9 @@ msgstr "Messaggio al fornitore"
 msgid "Negative for debits."
 msgstr "Negativo per gli addebiti."
 
+msgid "Net tax rate"
+msgstr "Aliquota saldo"
+
 msgctxt "Rappen"
 msgid "Net total"
 msgstr "Totale netto"
@@ -320,6 +377,9 @@ msgstr "Per la QR-fattura non è definito alcun conto bancario dell'azienda con 
 msgid "Nothing to complete, the chart of accounts is set up already."
 msgstr "Niente da completare, il piano dei conti è già configurato."
 
+msgid "Notification procedure (225)"
+msgstr "Procedura di notifica (225)"
+
 msgctxt "Rappen"
 msgid "Number"
 msgstr "Numero"
@@ -332,6 +392,12 @@ msgstr "Solo i pagamenti in entrata possono essere registrati su una fattura o u
 
 msgid "Opening balance"
 msgstr "Saldo iniziale"
+
+msgid "Opted supplies (205)"
+msgstr "Prestazioni optate (205)"
+
+msgid "Other flows of funds"
+msgstr "Altri flussi di mezzi"
 
 msgctxt "Rappen"
 msgid "Outstanding"
@@ -433,6 +499,12 @@ msgstr "Rappen"
 msgid "Rappen Settings"
 msgstr "Impostazioni Rappen"
 
+msgid "Reductions of consideration (235)"
+msgstr "Diminuzioni della controprestazione (235)"
+
+msgid "Reductions of input tax (420)"
+msgstr "Riduzioni della deduzione dell'imposta precedente (420)"
+
 msgid "Reference type"
 msgstr "Tipo di riferimento"
 
@@ -469,11 +541,23 @@ msgctxt "Rappen"
 msgid "Street"
 msgstr "Via"
 
+msgid "Subsidies (900)"
+msgstr "Sussidi (900)"
+
 msgid "Supplier name"
 msgstr "Nome del fornitore"
 
+msgid "Supplies abroad (221)"
+msgstr "Prestazioni all'estero (221)"
+
 msgid "Swiss and Liechtenstein postal codes have four digits, {postal_code} does not."
 msgstr "I numeri postali della Svizzera e del Liechtenstein hanno quattro cifre, {postal_code} no."
+
+msgid "Taxable supply"
+msgstr "Prestazione imponibile"
+
+msgid "Taxable turnover (299)"
+msgstr "Cifra d'affari imponibile (299)"
 
 msgid "The amount of a QR-bill is between 0.01 and 999999999.99, {amount} is not."
 msgstr "L'importo di una QR-fattura è compreso tra 0.01 e 999999999.99, {amount} no."
@@ -538,11 +622,17 @@ msgstr "Nell'indirizzo manca il nome."
 msgid "The name {name} is too long: {length} characters, at most {limit} are allowed."
 msgstr "Il nome {name} è troppo lungo: {length} caratteri, ne sono ammessi al massimo {limit}."
 
+msgid "The net tax rate method allows at most two net tax rates."
+msgstr "Il metodo delle aliquote saldo ammette al massimo due aliquote saldo."
+
 msgid "The payment proposal contains no payments."
 msgstr "La proposta di pagamento non contiene pagamenti."
 
 msgid "The payment run contains no payments."
 msgstr "Il ciclo di pagamento non contiene pagamenti."
+
+msgid "The period ends before it starts."
+msgstr "Il periodo termina prima di iniziare."
 
 msgid "The postal code is missing in the address of {name}."
 msgstr "Nell'indirizzo di {name} manca il numero postale."
@@ -577,6 +667,9 @@ msgstr "I singoli pagamenti di questa registrazione collettiva sono già stati i
 msgid "The street {street} is too long: {length} characters, at most {limit} are allowed."
 msgstr "La via {street} è troppo lunga: {length} caratteri, ne sono ammessi al massimo {limit}."
 
+msgid "The taxable turnover (box 299: {taxable}) must equal the turnover at the tax rates ({at_rates}). Assign the difference to exports, supplies abroad, exempt supplies or deductions."
+msgstr "La cifra d'affari imponibile (cifra 299: {taxable}) deve corrispondere alla cifra d'affari alle aliquote ({at_rates}). Attribuire la differenza alle esportazioni, alle prestazioni all'estero, alle prestazioni escluse o alle deduzioni."
+
 msgid "The town is missing in the address of {name}."
 msgstr "Nell'indirizzo di {name} manca la località."
 
@@ -605,12 +698,48 @@ msgstr "Totale"
 msgid "Total CHF"
 msgstr "Totale CHF"
 
+msgid "Total consideration (200)"
+msgstr "Totale delle controprestazioni (200)"
+
+msgid "Total deductions (289)"
+msgstr "Totale delle deduzioni (289)"
+
 msgid "Total EUR"
 msgstr "Totale EUR"
+
+msgid "Total input tax (479)"
+msgstr "Totale dell'imposta precedente (479)"
+
+msgid "Total tax (399)"
+msgstr "Totale dell'imposta dovuta (399)"
 
 msgctxt "Rappen"
 msgid "Town"
 msgstr "Località"
+
+msgid "Turnover of invoices without VAT. Assign it to boxes 220 to 280 below."
+msgstr "Cifra d'affari delle fatture senza IVA. Attribuirla sotto alle cifre da 220 a 280."
+
+msgid "Turnover per tax rate"
+msgstr "Cifra d'affari per aliquota"
+
+msgid "Turnover without VAT, to be assigned"
+msgstr "Cifra d'affari senza IVA, da attribuire"
+
+msgid "Type of submission"
+msgstr "Tipo di inoltro"
+
+msgid "UID"
+msgstr "IDI"
+
+msgid "UID {uid} is invalid: the check digit does not match."
+msgstr "L'IDI {uid} non è valido: la cifra di controllo non corrisponde."
+
+msgid "Unknown VAT method {method}."
+msgstr "Metodo IVA sconosciuto {method}."
+
+msgid "Upload this file in the ESTV ePortal."
+msgstr "Caricare questo file nell'ePortal dell'AFC."
 
 msgid "Upload this file in your e-banking."
 msgstr "Caricare questo file nell'e-banking."
@@ -618,9 +747,27 @@ msgstr "Caricare questo file nell'e-banking."
 msgid "Used by «Get open purchase invoices»."
 msgstr "Usato da «Recuperare le fatture dei fornitori aperte»."
 
+msgid "Various deductions (280)"
+msgstr "Diversi (280)"
+
+msgid "Various deductions (box 280) need a description."
+msgstr "Le deduzioni diverse (cifra 280) richiedono una descrizione."
+
 msgctxt "Rappen"
 msgid "VAT number"
 msgstr "Numero IVA"
+
+msgid "VAT number of the company, e.g. CHE-123.456.789. Taken from the company's tax ID."
+msgstr "Numero IVA dell'azienda, p. es. CHE-123.456.789. Ripreso dal numero fiscale dell'azienda."
+
+msgid "VAT Return"
+msgstr "Rendiconto IVA"
+
+msgid "VAT return not complete"
+msgstr "Rendiconto IVA incompleto"
+
+msgid "VAT Return Rate"
+msgstr "Aliquota del rendiconto IVA"
 
 msgid "When a payment in a camt file carries the reference of an open invoice or dunning and pays exactly the amount due, create the payment entry and reconcile it right away. Everything else stays open in the bank reconciliation."
 msgstr "Se un pagamento in un file camt riporta il riferimento di una fattura o di un sollecito aperto e salda esattamente l'importo dovuto, viene registrato e riconciliato subito. Tutto il resto rimane aperto nella riconciliazione bancaria."
@@ -637,6 +784,9 @@ msgstr "{0}: tipo di conto {1}"
 
 msgid "{iban} is not a QR-IBAN. A QR-IBAN is a Swiss or Liechtenstein IBAN with an institution ID (digits 5 to 9) from 30000 to 31999."
 msgstr "{iban} non è un QR-IBAN. Un QR-IBAN è un IBAN svizzero o del Liechtenstein con un'identificazione dell'istituto (posizioni da 5 a 9) compresa tra 30000 e 31999."
+
+msgid "{uid} is not a UID. A UID looks like CHE-123.456.789."
+msgstr "{uid} non è un IDI. Un IDI ha questo formato: CHE-123.456.789."
 
 msgid "{value} is not a valid amount."
 msgstr "{value} non è un importo valido."

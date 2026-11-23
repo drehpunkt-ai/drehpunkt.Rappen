@@ -181,6 +181,8 @@ def sales_invoice(company: str, rate: float = 1949.75, submit: bool = True, **fi
 		}
 	)
 	invoice.set_missing_values()
+	if invoice.get("taxes_and_charges") and not invoice.get("taxes"):
+		invoice.append_taxes_from_master()
 	invoice.insert()
 	if submit:
 		invoice.submit()
