@@ -12,6 +12,9 @@ The repository will be public under MIT. Write everything as if it already were:
 - `rappen/custom_fields.py`: every field Rappen adds to doctypes of Frappe and ERPNext. Names start with `rappen_`. `rappen/install.py` creates them on install and migrate and removes them on uninstall. No fixtures for custom fields.
 - `rappen/rappen/doctype/`: Rappen's own doctypes (module «Rappen»).
 - `rappen/tests/`: integration tests with `frappe.tests.IntegrationTestCase`.
+- `rappen/core/schemas/`: official XSD (SIX, eCH), unchanged. eCH imports resolve to the local copies.
+- `rappen/qr.py`, `banking.py`, `dunning.py`, `payments.py`, `vat.py`, `accounts.py`: the Frappe side of each feature.
+- `rappen/templates/`: payment part and print formats (Jinja).
 - `rappen/locale/`: translations (`main.pot`, `de.po`, `fr.po`, `it.po`).
 
 ## Rules
@@ -29,13 +32,15 @@ The repository will be public under MIT. Write everything as if it already were:
 - Every user-facing string goes through `_()` (Python) or `__()` (JavaScript) with the English text as source.
 - Translations in `rappen/locale/{de,fr,it}.po`. German in Swiss spelling: «ss», never «ß». Formal address («Sie», «vous»; Italian infinitive for instructions).
 - No en or em dashes in user-facing texts.
+- Frappe merges the catalogs of all apps, so a msgid that Frappe or ERPNext translate already must not be in Rappen's catalog without context. Generic words in Rappen's own wording get the context «Rappen»: `_("Date", context="Rappen")`, `__("Street", null, "Rappen")`. Labels in doctype JSON cannot have a context; choose a specific wording instead.
 - CI fails if a string has no translation in one of the three languages (`.github/scripts/check_translations.py`).
 
 ## Tests
 
 - Only made-up test data. IBANs and references from the samples of SIX (QR-IBAN `CH44 3199 9123 0008 8901 2`, IBAN `CH93 0076 2011 6238 5295 7`).
 - Core: `pytest` from the repository root.
-- Integration: `bench --site <site> run-tests --app rappen`.
+- Integration: `bench --site <site> run-tests --app rappen`, on a site after the setup wizard for a Swiss company (as in CI). Helpers for test data in `rappen/tests/utils.py`.
+- Print layouts: CI uploads the generated PDF as an artifact; the payment part position is also checked in `test_qr_bill.test_pdf`.
 - CI (`.github/workflows/ci.yml`): ruff, core tests, integration tests against the pinned ERPNext version and the latest `version-16`, translations.
 
 ## Versions
