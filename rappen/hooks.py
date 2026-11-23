@@ -20,6 +20,16 @@ before_uninstall = "rappen.install.before_uninstall"
 
 doctype_js = {
 	"Address": "public/js/address.js",
+	"Dunning": "public/js/dunning.js",
+	"Sales Invoice": "public/js/sales_invoice.js",
+}
+
+# Print formats
+# -------------
+# Functions available in Jinja: rappen_payment_part(doc), rappen_sender_line(doc)
+
+jinja = {
+	"methods": ["rappen.jinja"],
 }
 
 # Document events
@@ -32,5 +42,11 @@ doc_events = {
 	},
 	"Bank Account": {
 		"validate": "rappen.events.bank_account.validate",
+	},
+	"Dunning": {
+		"validate": "rappen.qr.set_payment_reference",
+	},
+	"Sales Invoice": {
+		"validate": "rappen.qr.set_payment_reference",
 	},
 }

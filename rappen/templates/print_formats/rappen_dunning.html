@@ -1,0 +1,51 @@
+{%- from "rappen/templates/print_formats/rappen_letter.html" import styles, top, status with context -%}
+{{ styles() }}
+<div class="rappen-letter">
+	{{ top(doc, letter_head, no_letterhead, [
+		(_("Number", context="Rappen"), doc.name),
+		(_("Date", context="Rappen"), doc.get_formatted("posting_date")),
+		(_("Customer number", context="Rappen"), doc.customer),
+	]) }}
+
+	<h1>{{ _(doc.dunning_type) | e }}</h1>
+	{{ status(doc) }}
+
+	{%- if doc.body_text %}<div class="rl-text">{{ doc.body_text }}</div>{% endif %}
+
+	<table class="rl-items">
+		<thead>
+			<tr>
+				<th>{{ _("Invoice", context="Rappen") }}</th>
+				<th>{{ _("Due date", context="Rappen") }}</th>
+				<th class="rl-num">{{ _("Days overdue", context="Rappen") }}</th>
+				<th class="rl-num">{{ _("Outstanding", context="Rappen") }}</th>
+				<th class="rl-num">{{ _("Interest", context="Rappen") }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{%- for row in doc.overdue_payments %}
+			<tr>
+				<td>{{ row.sales_invoice | e }}</td>
+				<td>{{ row.get_formatted("due_date") }}</td>
+				<td class="rl-num">{{ row.overdue_days }}</td>
+				<td class="rl-num">{{ row.get_formatted("outstanding", doc) }}</td>
+				<td class="rl-num">{{ row.get_formatted("interest", doc) }}</td>
+			</tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+
+	<table class="rl-totals">
+		<tr><td>{{ _("Outstanding", context="Rappen") }}</td><td>{{ doc.get_formatted("total_outstanding") }}</td></tr>
+		{%- if doc.total_interest %}
+		<tr><td>{{ _("Interest", context="Rappen") }}</td><td>{{ doc.get_formatted("total_interest") }}</td></tr>
+		{%- endif %}
+		{%- if doc.dunning_fee %}
+		<tr><td>{{ _("Dunning fee", context="Rappen") }}</td><td>{{ doc.get_formatted("dunning_fee") }}</td></tr>
+		{%- endif %}
+		<tr class="rl-grand"><td>{{ _("Total", context="Rappen") }} {{ doc.currency }}</td><td>{{ doc.get_formatted("grand_total") }}</td></tr>
+	</table>
+
+	{%- if doc.closing_text %}<div class="rl-text">{{ doc.closing_text }}</div>{% endif %}
+</div>
+{{ rappen_payment_part(doc) }}

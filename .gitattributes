@@ -1,0 +1,2 @@
+# Golden files must keep their exact bytes (line feeds, no final newline)
+rappen/core/tests/data/** -text

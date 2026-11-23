@@ -9,11 +9,11 @@ frappe.ui.form.on("Address", {
 		}
 		const esc = frappe.utils.escape_html;
 		const rows = [
-			[__("Street"), data.street],
-			[__("Building number"), data.building_number],
-			[__("Postal code"), data.postal_code],
-			[__("Town"), data.town],
-			[__("Country"), data.country],
+			[__("Street", null, "Rappen"), data.street],
+			[__("Building number", null, "Rappen"), data.building_number],
+			[__("Postal code", null, "Rappen"), data.postal_code],
+			[__("Town", null, "Rappen"), data.town],
+			[__("Country", null, "Rappen"), data.country],
 		]
 			.map(([label, value]) => `<tr><td class="text-muted">${esc(label)}</td><td>${esc(value || "")}</td></tr>`)
 			.join("");

@@ -1,0 +1,50 @@
+{#-
+	Common parts of Rappen's print formats: styles, letterhead, sender line and the recipient address placed for
+	a C5 or C4 envelope with the window on the right (Swiss Post, envelope standard), and the document details.
+-#}
+{%- macro styles() -%}
+<style>
+	.rappen-letter { font-family: Arial, "Liberation Sans", Helvetica, sans-serif; font-size: 10pt; line-height: 1.35; color: #000; }
+	.rappen-letter .rl-top { display: flex; justify-content: space-between; min-height: 45mm; margin-bottom: 8mm; }
+	.rappen-letter .rl-details { width: 70mm; font-size: 9pt; }
+	.rappen-letter .rl-details td { padding: 0 3mm 0.5mm 0; vertical-align: top; }
+	.rappen-letter .rl-details td:first-child { color: #555; white-space: nowrap; }
+	.rappen-letter .rl-window { width: 85mm; margin-right: 5mm; padding-top: 12mm; }
+	.rappen-letter .rl-sender { font-size: 7pt; border-bottom: 0.2mm solid #000; margin-bottom: 2mm; padding-bottom: 0.5mm; }
+	.rappen-letter h1 { font-size: 14pt; font-weight: bold; margin: 0 0 1mm 0; }
+	.rappen-letter .rl-status { font-size: 11pt; color: #c00; font-weight: bold; margin-bottom: 4mm; }
+	.rappen-letter table.rl-items { width: 100%; border-collapse: collapse; margin-top: 6mm; font-size: 9.5pt; }
+	.rappen-letter table.rl-items th { text-align: left; font-weight: bold; border-bottom: 0.3mm solid #000; padding: 1mm 1.5mm; }
+	.rappen-letter table.rl-items td { border-bottom: 0.1mm solid #bbb; padding: 1.2mm 1.5mm; vertical-align: top; }
+	.rappen-letter table.rl-items .rl-num { text-align: right; white-space: nowrap; }
+	.rappen-letter table.rl-items .rl-description { color: #444; font-size: 8.5pt; }
+	.rappen-letter table.rl-totals { margin: 4mm 0 0 auto; border-collapse: collapse; min-width: 80mm; font-size: 9.5pt; }
+	.rappen-letter table.rl-totals td { padding: 0.8mm 1.5mm; }
+	.rappen-letter table.rl-totals td:last-child { text-align: right; white-space: nowrap; }
+	.rappen-letter table.rl-totals tr.rl-grand td { font-weight: bold; border-top: 0.3mm solid #000; border-bottom: 0.3mm double #000; }
+	.rappen-letter .rl-text { margin-top: 6mm; }
+	.rappen-letter .rl-text p { margin: 0 0 2mm 0; }
+</style>
+{%- endmacro -%}
+
+{%- macro top(doc, letter_head, no_letterhead, details) -%}
+{%- if letter_head and not no_letterhead %}<div class="letter-head">{{ letter_head }}</div>{% endif %}
+<div class="rl-top">
+	<table class="rl-details">
+		{%- for label, value in details if value %}
+		<tr><td>{{ label }}</td><td>{{ value | e }}</td></tr>
+		{%- endfor %}
+	</table>
+	<div class="rl-window">
+		{%- set sender = rappen_sender_line(doc) %}
+		{%- if sender %}<div class="rl-sender">{{ sender | e }}</div>{% endif %}
+		<div><b>{{ doc.customer_name | e }}</b></div>
+		{%- if doc.address_display %}<div>{{ doc.address_display }}</div>{% endif %}
+	</div>
+</div>
+{%- endmacro -%}
+
+{%- macro status(doc) -%}
+{%- if doc.docstatus == 0 %}<div class="rl-status">{{ _("Draft", context="Rappen") }}</div>{% endif %}
+{%- if doc.docstatus == 2 %}<div class="rl-status">{{ _("Cancelled", context="Rappen") }}</div>{% endif %}
+{%- endmacro -%}

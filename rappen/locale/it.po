@@ -14,6 +14,9 @@ msgstr "Una Creditor Reference contiene da 1 a 21 lettere (dalla A alla Z) o cif
 msgid "A Creditor Reference starts with RF and two check digits, followed by 1 to 21 letters or digits. {reference} does not."
 msgstr "Una Creditor Reference inizia con RF e due cifre di controllo, seguite da 1 a 21 lettere o cifre. {reference} non rispetta questa regola."
 
+msgid "A QR reference (QRR) can only be used with a QR-IBAN, {iban} is a regular IBAN."
+msgstr "Un riferimento QR (QRR) può essere utilizzato solo con un QR-IBAN, {iban} è un IBAN ordinario."
+
 msgid "A QR reference can only contain digits, got {body}."
 msgstr "Un riferimento QR contiene solo cifre, ricevuto: {body}."
 
@@ -26,23 +29,91 @@ msgstr "Un riferimento QR ha al massimo 26 cifre prima della cifra di controllo,
 msgid "A QR reference prefix only applies to a QR-IBAN. Enter the QR-IBAN first."
 msgstr "Un prefisso del riferimento QR vale solo per un QR-IBAN. Inserire prima il QR-IBAN."
 
+msgid "A QR-bill has at most two alternative procedures of at most 100 characters each."
+msgstr "Una QR-fattura ha al massimo due procedure alternative di al massimo 100 caratteri ciascuna."
+
+msgid "A QR-bill is in CHF or EUR, not in {currency}."
+msgstr "Una QR-fattura è in CHF o EUR, non in {currency}."
+
+msgid "A QR-bill needs a Swiss or Liechtenstein IBAN, {iban} is from {country}."
+msgstr "Una QR-fattura richiede un IBAN svizzero o del Liechtenstein, {iban} proviene da {country}."
+
+msgid "A QR-IBAN can only be used with a QR reference (QRR)."
+msgstr "Un QR-IBAN può essere utilizzato solo con un riferimento QR (QRR)."
+
 msgid "Address line 2 ({0}) does not appear on QR-bills and in payment files. They only know street, building number, postal code, town and country."
 msgstr "La riga d'indirizzo 2 ({0}) non compare sulle QR-fatture né nei file di pagamento. Questi conoscono solo via, numero civico, numero postale, località e paese."
 
 msgid "Address on payments"
 msgstr "Indirizzo sui pagamenti"
 
+msgctxt "Rappen"
+msgid "Amount"
+msgstr "Importo"
+
+msgctxt "Rappen"
+msgid "Amount due"
+msgstr "Importo dovuto"
+
+msgid "Bank account for the QR-bill"
+msgstr "Conto bancario per la QR-fattura"
+
+msgctxt "Rappen"
 msgid "Building number"
 msgstr "Numero civico"
 
+msgctxt "Rappen"
+msgid "Cancelled"
+msgstr "Annullato"
+
+msgctxt "Rappen"
 msgid "Country"
 msgstr "Paese"
 
 msgid "Country code {country} is invalid, it needs two letters (ISO 3166-1)."
 msgstr "Il codice del paese {country} non è valido, deve avere due lettere (ISO 3166-1)."
 
+msgctxt "Rappen"
+msgid "Credit note"
+msgstr "Nota di credito"
+
 msgid "Creditor Reference {reference} is invalid: the check digits do not match."
 msgstr "La Creditor Reference {reference} non è valida: le cifre di controllo non corrispondono."
+
+msgctxt "Rappen"
+msgid "Customer number"
+msgstr "Numero cliente"
+
+msgctxt "Rappen"
+msgid "Date"
+msgstr "Data"
+
+msgctxt "Rappen"
+msgid "Days overdue"
+msgstr "Giorni di ritardo"
+
+msgctxt "Rappen"
+msgid "Discount"
+msgstr "Sconto"
+
+msgctxt "Rappen"
+msgid "Draft"
+msgstr "Bozza"
+
+msgctxt "Rappen"
+msgid "Due date"
+msgstr "Scadenza"
+
+msgctxt "Rappen"
+msgid "Dunning fee"
+msgstr "Spese di sollecito"
+
+msgctxt "Rappen"
+msgid "Dunning {0}"
+msgstr "Sollecito {0}"
+
+msgid "Empty: the company's default bank account."
+msgstr "Vuoto: il conto bancario predefinito dell'azienda."
 
 msgid "IBAN {iban} has {length} characters, IBANs from {country} have {expected}."
 msgstr "L'IBAN {iban} ha {length} caratteri, gli IBAN del paese {country} ne hanno {expected}."
@@ -53,17 +124,71 @@ msgstr "L'IBAN {iban} non è valido: inizia con il codice del paese e due cifre 
 msgid "IBAN {iban} is invalid: the check digits do not match."
 msgstr "L'IBAN {iban} non è valido: le cifre di controllo non corrispondono."
 
+msgctxt "Rappen"
+msgid "Interest"
+msgstr "Interessi"
+
 msgid "Invalid IBAN"
 msgstr "IBAN non valido"
 
 msgid "Invalid QR-IBAN"
 msgstr "QR-IBAN non valido"
 
+msgctxt "Rappen"
+msgid "Invoice"
+msgstr "Fattura"
+
+msgctxt "Rappen"
+msgid "Invoice number"
+msgstr "Numero di fattura"
+
+msgctxt "Rappen"
+msgid "Invoice {0}"
+msgstr "Fattura {0}"
+
+msgctxt "Rappen"
+msgid "Item"
+msgstr "Articolo"
+
+msgid "Message and billing information of a QR-bill have at most {limit} characters together, here they have {length}."
+msgstr "Il messaggio e le informazioni di fatturazione di una QR-fattura hanno insieme al massimo {limit} caratteri, qui {length}."
+
+msgctxt "Rappen"
+msgid "Net total"
+msgstr "Totale netto"
+
+msgid "No company bank account with an IBAN is set for the QR-bill."
+msgstr "Per la QR-fattura non è definito alcun conto bancario dell'azienda con IBAN."
+
+msgctxt "Rappen"
+msgid "Number"
+msgstr "Numero"
+
 msgid "Only for QR-bills with a QR reference. Your bank assigns it in addition to the IBAN."
 msgstr "Solo per QR-fatture con riferimento QR. La banca lo assegna in aggiunta all'IBAN."
 
+msgctxt "Rappen"
+msgid "Outstanding"
+msgstr "Scoperto"
+
+msgctxt "Rappen"
+msgid "Paid in advance"
+msgstr "Pagato in anticipo"
+
+msgctxt "Rappen"
+msgid "Payable by {0}."
+msgstr "Pagabile entro il {0}."
+
+msgid "Payment reference"
+msgstr "Riferimento di pagamento"
+
+msgctxt "Rappen"
 msgid "Postal code"
 msgstr "Numero postale"
+
+msgctxt "Rappen"
+msgid "Price"
+msgstr "Prezzo"
 
 msgid "QR reference prefix (BESR-ID)"
 msgstr "Prefisso del riferimento QR (ID BESR)"
@@ -71,20 +196,50 @@ msgstr "Prefisso del riferimento QR (ID BESR)"
 msgid "QR reference {reference} is invalid: the check digit does not match."
 msgstr "Il riferimento QR {reference} non è valido: la cifra di controllo non corrisponde."
 
+msgid "QR-bill"
+msgstr "QR-fattura"
+
+msgid "QR-bill version {version} is not supported."
+msgstr "La versione {version} della QR-fattura non è supportata."
+
 msgid "QR-IBAN"
 msgstr "QR-IBAN"
+
+msgctxt "Rappen"
+msgid "Quantity"
+msgstr "Quantità"
+
+msgid "Reference type"
+msgstr "Tipo di riferimento"
+
+msgctxt "Rappen"
+msgid "Rounding"
+msgstr "Arrotondamento"
 
 msgid "Some banks require every QR reference to start with a number they assign. Leave empty if yours does not."
 msgstr "Alcune banche richiedono che ogni riferimento QR inizi con un numero da loro assegnato. Lasciare vuoto se la propria banca non lo richiede."
 
+msgctxt "Rappen"
 msgid "Street"
 msgstr "Via"
 
 msgid "Swiss and Liechtenstein postal codes have four digits, {postal_code} does not."
 msgstr "I numeri postali della Svizzera e del Liechtenstein hanno quattro cifre, {postal_code} no."
 
+msgid "The amount of a QR-bill is between 0.01 and 999999999.99, {amount} is not."
+msgstr "L'importo di una QR-fattura è compreso tra 0.01 e 999999999.99, {amount} no."
+
+msgid "The amount {amount} is not a number."
+msgstr "L'importo {amount} non è un numero."
+
+msgid "The content of the QR code has {length} characters, at most {limit} are allowed."
+msgstr "Il contenuto del codice QR ha {length} caratteri, ne sono ammessi al massimo {limit}."
+
 msgid "The country is missing in the address of {name}."
 msgstr "Nell'indirizzo di {name} manca il paese."
+
+msgid "The creditor is missing in the QR code."
+msgstr "Nel codice QR manca il creditore."
 
 msgid "The name is missing in the address."
 msgstr "Nell'indirizzo manca il nome."
@@ -98,8 +253,20 @@ msgstr "Nell'indirizzo di {name} manca il numero postale."
 msgid "The postal code {postal_code} is too long: at most {limit} characters are allowed."
 msgstr "Il numero postale {postal_code} è troppo lungo: sono ammessi al massimo {limit} caratteri."
 
+msgid "The QR code content is incomplete: the trailer EPD is missing."
+msgstr "Il contenuto del codice QR è incompleto: manca la chiusura EPD."
+
+msgid "The QR code declares reference type {declared}, but its reference is of type {actual}."
+msgstr "Il codice QR indica il tipo di riferimento {declared}, ma il riferimento è del tipo {actual}."
+
+msgid "The QR code would need version {version}, at most 25 is allowed. Shorten the texts."
+msgstr "Il codice QR richiederebbe la versione {version}, è ammessa al massimo la 25. Accorciare i testi."
+
 msgid "The QR reference prefix consists of digits only, at most {0} of them."
 msgstr "Il prefisso del riferimento QR contiene solo cifre, al massimo {0}."
+
+msgid "The QR-bill uses an unstructured address (type {type}), which is no longer valid. Ask the creditor for a new QR-bill."
+msgstr "La QR-fattura utilizza un indirizzo non strutturato (tipo {type}), che non è più valido. Chiedere una nuova QR-fattura al creditore."
 
 msgid "The street {street} is too long: {length} characters, at most {limit} are allowed."
 msgstr "La via {street} è troppo lunga: {length} caratteri, ne sono ammessi al massimo {limit}."
@@ -113,8 +280,27 @@ msgstr "La località {town} è troppo lunga: {length} caratteri, ne sono ammessi
 msgid "This is how the address appears on QR-bills and in payment files."
 msgstr "Ecco come appare l'indirizzo sulle QR-fatture e nei file di pagamento."
 
+msgid "This is not the content of a Swiss QR Code."
+msgstr "Questo non è il contenuto di uno Swiss QR Code."
+
+msgid "This QR-bill cannot be paid:"
+msgstr "Questa QR-fattura non può essere pagata:"
+
+msgctxt "Rappen"
+msgid "Total"
+msgstr "Totale"
+
+msgctxt "Rappen"
 msgid "Town"
 msgstr "Località"
+
+msgctxt "Rappen"
+msgid "VAT number"
+msgstr "Numero IVA"
+
+msgctxt "Rappen"
+msgid "Your reference"
+msgstr "Vostro riferimento"
 
 msgid "{0} is a QR-IBAN. It only works together with a QR reference, so it belongs in the field QR-IBAN, not in the field IBAN."
 msgstr "{0} è un QR-IBAN. Funziona solo insieme a un riferimento QR e va quindi inserito nel campo QR-IBAN, non nel campo IBAN."

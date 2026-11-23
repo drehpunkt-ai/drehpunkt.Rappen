@@ -1,0 +1,33 @@
+SPC
+0200
+1
+CH9300762011623852957
+S
+Muster Schreinerei AG
+Bahnhofstrasse
+12a
+8000
+Zürich
+CH
+
+
+
+
+
+
+
+50.00
+CHF
+S
+Max Muster GmbH
+Musterweg
+3
+80331
+München
+DE
+NON
+
+Spende
+EPD
+
+Name AV1: UV;Beispiel;12345

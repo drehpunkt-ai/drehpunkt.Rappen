@@ -1,0 +1,32 @@
+SPC
+0200
+1
+CH4431999123000889012
+S
+Muster Schreinerei AG
+Bahnhofstrasse
+12a
+8000
+Zürich
+CH
+
+
+
+
+
+
+
+1949.75
+CHF
+S
+Anna Beispiel
+Route de Genève
+7bis
+1260
+Nyon
+CH
+QRR
+210000000003139471430009017
+Rechnung RE-2026-0042
+EPD
+//S1/10/RE-2026-0042/11/261123/30/123456789

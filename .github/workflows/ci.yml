@@ -38,8 +38,11 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.14"
-      # The app's own dependencies plus pytest, without Frappe
-      - run: pip install pytest==9.2.0 $(python -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml', 'rb'))['project']['dependencies']))")
+      # The app's own dependencies plus pytest, without Frappe. zxing-cpp (Apache-2.0) and Pillow read the
+      # generated QR codes back.
+      - run: |
+          pip install pytest==9.2.0 zxing-cpp==3.1.1 pillow==13.0.0 \
+            $(python -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml', 'rb'))['project']['dependencies']))")
       - run: pytest
 
   integration:
@@ -111,11 +114,34 @@ jobs:
         env:
           CI: "Yes"
 
+      # A Swiss company as a real installation has it: setup wizard with Switzerland, CHF and the KMU chart
+      - name: Setup wizard
+        working-directory: /home/runner/frappe-bench
+        run: |
+          year=$(date +%Y)
+          bench --site test_site execute frappe.desk.page.setup_wizard.setup_wizard.setup_complete --kwargs \
+            "{'args': {'language': 'English', 'country': 'Switzerland', 'timezone': 'Europe/Zurich', \
+            'currency': 'CHF', 'company_name': 'Rappen Test AG', 'company_abbr': 'RTA', \
+            'chart_of_accounts': '240812 Schulkontenrahmen VEB - DE', 'fy_start_date': '$year-01-01', \
+            'fy_end_date': '$year-12-31', 'enable_telemetry': 0}}"
+          # PDFs with the Chrome of the runner, so that Frappe does not download Chromium
+          bench set-config -g chromium_path "$(which google-chrome)"
+
       - name: Tests
         working-directory: /home/runner/frappe-bench
         run: |
           bench --site test_site set-config allow_tests true
           bench --site test_site run-tests --app rappen
+        env:
+          RAPPEN_PDF_DIR: /home/runner/rappen-pdf
+
+      - name: PDFs
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pdf-${{ matrix.name == 'pinned' && 'pinned' || 'latest' }}
+          path: /home/runner/rappen-pdf
+          if-no-files-found: ignore
 
       - name: Translations
         if: matrix.name == 'pinned'

@@ -1,0 +1,67 @@
+{%- from "rappen/templates/print_formats/rappen_letter.html" import styles, top, status with context -%}
+{{ styles() }}
+<div class="rappen-letter">
+	{{ top(doc, letter_head, no_letterhead, [
+		(_("Invoice number", context="Rappen"), doc.name),
+		(_("Date", context="Rappen"), doc.get_formatted("posting_date")),
+		(_("Due date", context="Rappen"), doc.get_formatted("due_date") if not doc.is_return else ""),
+		(_("Customer number", context="Rappen"), doc.customer),
+		(_("Your reference", context="Rappen"), doc.po_no),
+		(_("VAT number", context="Rappen"), doc.get("company_tax_id")),
+	]) }}
+
+	<h1>{{ _("Credit note", context="Rappen") if doc.is_return else _("Invoice", context="Rappen") }} {{ doc.name | e }}</h1>
+	{{ status(doc) }}
+
+	<table class="rl-items">
+		<thead>
+			<tr>
+				<th>{{ _("Item", context="Rappen") }}</th>
+				<th class="rl-num">{{ _("Quantity", context="Rappen") }}</th>
+				<th class="rl-num">{{ _("Price", context="Rappen") }}</th>
+				<th class="rl-num">{{ _("Amount", context="Rappen") }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{%- for item in doc.items %}
+			<tr>
+				<td>
+					{{ item.item_name | e }}
+					{%- if item.description and item.description != item.item_name %}
+					<div class="rl-description">{{ item.description }}</div>
+					{%- endif %}
+				</td>
+				<td class="rl-num">{{ item.get_formatted("qty") }} {{ _(item.uom) | e }}</td>
+				<td class="rl-num">{{ item.get_formatted("rate", doc) }}</td>
+				<td class="rl-num">{{ item.get_formatted("amount", doc) }}</td>
+			</tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+
+	<table class="rl-totals">
+		<tr><td>{{ _("Net total", context="Rappen") }}</td><td>{{ doc.get_formatted("net_total") }}</td></tr>
+		{%- if doc.discount_amount %}
+		<tr><td>{{ _("Discount", context="Rappen") }}</td><td>{{ doc.get_formatted("discount_amount") }}</td></tr>
+		{%- endif %}
+		{%- for tax in doc.taxes if tax.tax_amount %}
+		<tr><td>{{ tax.description | e }}</td><td>{{ tax.get_formatted("tax_amount", doc) }}</td></tr>
+		{%- endfor %}
+		{%- if doc.rounding_adjustment %}
+		<tr><td>{{ _("Rounding", context="Rappen") }}</td><td>{{ doc.get_formatted("rounding_adjustment") }}</td></tr>
+		{%- endif %}
+		<tr class="rl-grand"><td>{{ _("Total", context="Rappen") }} {{ doc.currency }}</td><td>{{ doc.get_formatted("rounded_total" if doc.rounded_total else "grand_total") }}</td></tr>
+		{%- if doc.total_advance %}
+		<tr><td>{{ _("Paid in advance", context="Rappen") }}</td><td>{{ doc.get_formatted("total_advance") }}</td></tr>
+		<tr><td>{{ _("Amount due", context="Rappen") }}</td><td>{{ doc.get_formatted("outstanding_amount") }}</td></tr>
+		{%- endif %}
+	</table>
+
+	<div class="rl-text">
+		{%- if not doc.is_return and doc.due_date %}
+		<p>{{ _("Payable by {0}.", context="Rappen").format(doc.get_formatted("due_date")) }}</p>
+		{%- endif %}
+		{%- if doc.terms %}<div>{{ doc.terms }}</div>{% endif %}
+	</div>
+</div>
+{{ rappen_payment_part(doc) }}
