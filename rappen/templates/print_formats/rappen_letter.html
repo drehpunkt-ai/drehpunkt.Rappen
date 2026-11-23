@@ -4,6 +4,13 @@
 -#}
 {%- macro styles() -%}
 <style>
+	/* Frappe takes the PDF page margins from this rule. Zero, so that the payment part can reach the paper
+	   edge; the letter keeps its margins as padding that repeats on every page. */
+	.print-format { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; }
+	@media screen { body .print-format { margin-left: auto; margin-right: auto; } }
+	@media print {
+		.rappen-letter { padding: 15mm 15mm 15mm 20mm; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+	}
 	.rappen-letter { font-family: Arial, "Liberation Sans", Helvetica, sans-serif; font-size: 10pt; line-height: 1.35; color: #000; }
 	.rappen-letter .rl-top { display: flex; justify-content: space-between; min-height: 45mm; margin-bottom: 8mm; }
 	.rappen-letter .rl-details { width: 70mm; font-size: 9pt; }

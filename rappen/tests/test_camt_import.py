@@ -2,7 +2,7 @@ from pathlib import Path
 
 import frappe
 from frappe.tests import IntegrationTestCase
-from frappe.utils import flt
+from frappe.utils import flt, today
 
 from rappen.banking import book_payment
 from rappen.tests import utils
@@ -12,7 +12,8 @@ SAMPLE_QRR = "210000000003139471430009017"
 
 
 def camt_file(name: str, replacements: dict[str, str]) -> bytes:
-	text = (DATA / name).read_text(encoding="utf-8")
+	"""A sample camt file with the given replacements, booked today."""
+	text = (DATA / name).read_text(encoding="utf-8").replace("2026-11-23", today())
 	for old, new in replacements.items():
 		text = text.replace(old, new)
 	return text.encode()

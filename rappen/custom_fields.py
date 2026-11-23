@@ -91,6 +91,43 @@ def get_custom_fields() -> dict[str, list[dict]]:
 				"read_only": 1,
 			},
 		],
+		"Purchase Invoice": [
+			{
+				"fieldname": "rappen_payment_section",
+				"label": "Payment details",
+				"fieldtype": "Section Break",
+				"insert_after": "bill_date",
+			},
+			{
+				"fieldname": "rappen_qr_code",
+				"label": "QR-bill of the supplier",
+				"fieldtype": "Small Text",
+				"insert_after": "rappen_payment_section",
+				"no_copy": 1,
+				"description": "Scan the QR code of the supplier's QR-bill into this field with a hand scanner, or paste its content.",
+			},
+			{
+				"fieldname": "rappen_payment_column",
+				"fieldtype": "Column Break",
+				"insert_after": "rappen_qr_code",
+			},
+			{
+				"fieldname": "rappen_creditor_iban",
+				"label": "IBAN of the supplier",
+				"fieldtype": "Data",
+				"insert_after": "rappen_payment_column",
+				"no_copy": 1,
+				"description": "From the QR-bill. Empty: the supplier's bank account.",
+			},
+			{
+				"fieldname": "rappen_payment_reference",
+				"label": "Payment reference",
+				"fieldtype": "Data",
+				"insert_after": "rappen_creditor_iban",
+				"no_copy": 1,
+				"search_index": 1,
+			},
+		],
 		"Sales Invoice": _qr_fields(insert_after="account_for_change_amount"),
 		"Dunning": _qr_fields(insert_after="grand_total"),
 		"Bank Account": [

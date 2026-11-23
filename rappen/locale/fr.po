@@ -61,11 +61,20 @@ msgctxt "Rappen"
 msgid "Amount due"
 msgstr "Montant dû"
 
+msgid "Amount to pay"
+msgstr "Montant à payer"
+
 msgid "Bank account for the QR-bill"
 msgstr "Compte bancaire pour la QR-facture"
 
+msgid "Bank account of the company that the payments are made from."
+msgstr "Compte bancaire de l'entreprise depuis lequel les paiements sont effectués."
+
 msgid "Bank Account {0} does not belong to company {1}."
 msgstr "Le compte bancaire {0} n'appartient pas à l'entreprise {1}."
+
+msgid "Bank Account {0} is not an account of company {1}."
+msgstr "Le compte bancaire {0} n'est pas un compte de l'entreprise {1}."
 
 msgid "Bank entry reference"
 msgstr "Référence de l'écriture bancaire"
@@ -166,9 +175,15 @@ msgstr "Rabais"
 msgid "Document type"
 msgstr "Type de document"
 
+msgid "Download payment file"
+msgstr "Télécharger le fichier de paiement"
+
 msgctxt "Rappen"
 msgid "Draft"
 msgstr "Brouillon"
+
+msgid "Due date"
+msgstr "Échéance"
 
 msgctxt "Rappen"
 msgid "Due date"
@@ -189,11 +204,17 @@ msgstr "Rappel {0}"
 msgid "Empty: the company's default bank account."
 msgstr "Vide : le compte bancaire par défaut de l'entreprise."
 
+msgid "End-to-end ID"
+msgstr "ID de bout en bout"
+
 msgid "Entry {reference} has no booking date."
 msgstr "L'écriture {reference} n'a pas de date de comptabilisation."
 
 msgid "Every payment needs its own end-to-end ID."
 msgstr "Chaque paiement nécessite son propre ID de bout en bout."
+
+msgid "Execution date"
+msgstr "Date d'exécution"
 
 msgid "Fee for the final dunning"
 msgstr "Frais pour le dernier rappel"
@@ -217,6 +238,15 @@ msgstr "Premier rappel"
 
 msgid "Found from the IBAN in the file if left empty."
 msgstr "Déterminé à partir de l'IBAN du fichier s'il est vide."
+
+msgid "From the QR-bill. Empty: the supplier's bank account."
+msgstr "Issu de la QR-facture. Vide : le compte bancaire du fournisseur."
+
+msgid "Get open purchase invoices"
+msgstr "Récupérer les factures fournisseurs ouvertes"
+
+msgid "IBAN of the supplier"
+msgstr "IBAN du fournisseur"
 
 msgid "IBAN {iban} has {length} characters, IBANs from {country} have {expected}."
 msgstr "L'IBAN {iban} compte {length} caractères, les IBAN du pays {country} en comptent {expected}."
@@ -258,6 +288,9 @@ msgctxt "Rappen"
 msgid "Invoice {0}"
 msgstr "Facture {0}"
 
+msgid "Invoices due until"
+msgstr "Factures échues jusqu'au"
+
 msgctxt "Rappen"
 msgid "Item"
 msgstr "Article"
@@ -267,6 +300,9 @@ msgstr "Document correspondant"
 
 msgid "Message and billing information of a QR-bill have at most {limit} characters together, here they have {length}."
 msgstr "Le message et les informations de facture d'une QR-facture comptent ensemble au plus {limit} caractères, ici {length}."
+
+msgid "Message to the supplier"
+msgstr "Message au fournisseur"
 
 msgid "Negative for debits."
 msgstr "Négatif pour les débits."
@@ -305,12 +341,36 @@ msgctxt "Rappen"
 msgid "Paid in advance"
 msgstr "Payé d'avance"
 
+msgid "pain.001 file"
+msgstr "Fichier pain.001"
+
+msgid "Pay from"
+msgstr "Payer depuis"
+
 msgctxt "Rappen"
 msgid "Payable by {0}."
 msgstr "Payable jusqu'au {0}."
 
+msgid "Payment details"
+msgstr "Données de paiement"
+
 msgid "Payment Entry {0} created"
 msgstr "Paiement {0} créé"
+
+msgid "Payment Entry {0} is reconciled with the bank already and cannot be cancelled."
+msgstr "Le paiement {0} est déjà rapproché avec la banque et ne peut pas être annulé."
+
+msgid "Payment file"
+msgstr "Fichier de paiement"
+
+msgid "Payment file not possible"
+msgstr "Fichier de paiement impossible"
+
+msgid "Payment Proposal"
+msgstr "Proposition de paiement"
+
+msgid "Payment Proposal Item"
+msgstr "Poste de la proposition de paiement"
 
 msgid "Payment reference"
 msgstr "Référence de paiement"
@@ -318,6 +378,9 @@ msgstr "Référence de paiement"
 msgctxt "Rappen"
 msgid "Payment reminder"
 msgstr "Rappel de paiement"
+
+msgid "Payment type"
+msgstr "Type de paiement"
 
 msgid "Payment {id} goes to a QR-IBAN and needs the QR reference of the QR-bill."
 msgstr "Le paiement {id} est destiné à un QR-IBAN et nécessite la référence QR de la QR-facture."
@@ -339,6 +402,9 @@ msgctxt "Rappen"
 msgid "Price"
 msgstr "Prix"
 
+msgid "Purchase Invoice {0} is in the list twice."
+msgstr "La facture fournisseur {0} figure deux fois dans la liste."
+
 msgid "QR reference prefix (BESR-ID)"
 msgstr "Préfixe de la référence QR (ID BESR)"
 
@@ -347,6 +413,9 @@ msgstr "La référence QR {reference} n'est pas valable : le chiffre de contrôl
 
 msgid "QR-bill"
 msgstr "QR-facture"
+
+msgid "QR-bill of the supplier"
+msgstr "QR-facture du fournisseur"
 
 msgid "QR-bill version {version} is not supported."
 msgstr "La version {version} de la QR-facture n'est pas prise en charge."
@@ -378,6 +447,15 @@ msgctxt "Rappen"
 msgid "Rounding"
 msgstr "Arrondi"
 
+msgid "Row {0}: {1} has no IBAN. Scan the QR-bill or add a bank account to the supplier."
+msgstr "Ligne {0} : {1} n'a pas d'IBAN. Scannez la QR-facture ou ajoutez un compte bancaire au fournisseur."
+
+msgid "Row {0}: {1} is more than the outstanding amount of {2}."
+msgstr "Ligne {0} : {1} dépasse le montant ouvert de {2}."
+
+msgid "Scan the QR code of the supplier's QR-bill into this field with a hand scanner, or paste its content."
+msgstr "Scannez le code QR de la QR-facture du fournisseur dans ce champ avec un scanner manuel ou collez-y son contenu."
+
 msgid "Some banks require every QR reference to start with a number they assign. Leave empty if yours does not."
 msgstr "Certaines banques exigent que chaque référence QR commence par un numéro qu'elles attribuent. Laisser vide si ce n'est pas le cas de la vôtre."
 
@@ -390,6 +468,9 @@ msgstr "Le relevé {id} ne contient pas d'IBAN pour le compte."
 msgctxt "Rappen"
 msgid "Street"
 msgstr "Rue"
+
+msgid "Supplier name"
+msgstr "Nom du fournisseur"
 
 msgid "Swiss and Liechtenstein postal codes have four digits, {postal_code} does not."
 msgstr "Les numéros postaux de Suisse et du Liechtenstein comptent quatre chiffres, ce n'est pas le cas de {postal_code}."
@@ -417,6 +498,9 @@ msgstr "Le créancier manque dans le code QR."
 
 msgid "The end-to-end ID {id} needs 1 to 35 letters, digits or separators."
 msgstr "L'ID de bout en bout {id} doit compter 1 à 35 lettres, chiffres ou séparateurs."
+
+msgid "The execution date lies in the past."
+msgstr "La date d'exécution est dans le passé."
 
 msgid "The file contains a document type declaration, which camt files never have."
 msgstr "Le fichier contient une déclaration de type de document, ce que les fichiers camt n'ont jamais."
@@ -454,6 +538,9 @@ msgstr "Le nom manque dans l'adresse."
 msgid "The name {name} is too long: {length} characters, at most {limit} are allowed."
 msgstr "Le nom {name} est trop long : {length} caractères, {limit} au maximum sont autorisés."
 
+msgid "The payment proposal contains no payments."
+msgstr "La proposition de paiement ne contient aucun paiement."
+
 msgid "The payment run contains no payments."
 msgstr "Le lot de paiements ne contient aucun paiement."
 
@@ -474,6 +561,12 @@ msgstr "Le code QR nécessiterait la version {version}, 25 au maximum est autori
 
 msgid "The QR reference prefix consists of digits only, at most {0} of them."
 msgstr "Le préfixe de référence QR ne contient que des chiffres, {0} au maximum."
+
+msgid "The QR-bill asks for {0} {1}, the invoice totals {0} {2}."
+msgstr "La QR-facture demande {0} {1}, la facture totalise {0} {2}."
+
+msgid "The QR-bill is in {0}, the invoice in {1}."
+msgstr "La QR-facture est en {0}, la facture en {1}."
 
 msgid "The QR-bill uses an unstructured address (type {type}), which is no longer valid. Ask the creditor for a new QR-bill."
 msgstr "La QR-facture utilise une adresse non structurée (type {type}), qui n'est plus valable. Demandez une nouvelle QR-facture au créancier."
@@ -509,9 +602,21 @@ msgctxt "Rappen"
 msgid "Total"
 msgstr "Total"
 
+msgid "Total CHF"
+msgstr "Total CHF"
+
+msgid "Total EUR"
+msgstr "Total EUR"
+
 msgctxt "Rappen"
 msgid "Town"
 msgstr "Localité"
+
+msgid "Upload this file in your e-banking."
+msgstr "Chargez ce fichier dans votre e-banking."
+
+msgid "Used by «Get open purchase invoices»."
+msgstr "Utilisé par «Récupérer les factures fournisseurs ouvertes»."
 
 msgctxt "Rappen"
 msgid "VAT number"

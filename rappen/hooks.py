@@ -50,6 +50,9 @@ doc_events = {
 	"Dunning": {
 		"validate": "rappen.qr.set_payment_reference",
 	},
+	"Purchase Invoice": {
+		"validate": "rappen.payments.read_supplier_qr_bill",
+	},
 	"Sales Invoice": {
 		"validate": "rappen.qr.set_payment_reference",
 	},

@@ -190,6 +190,10 @@ class Importer:
 		if document and self.auto_book and _equal(transaction.amount, amount_due(document_type, document)):
 			row.payment_entry = book_payment(bank_transaction)
 			row.result = "Booked"
+		elif not transaction.credit and transaction.end_to_end_id:
+			payment = match_outgoing(bank_transaction, transaction)
+			if payment:
+				row.payment_entry, row.result = payment, "Booked"
 
 	def _replace_batch(self, transaction: camt.Transaction, bank_account: str) -> bool | None:
 		"""Cancel the batch entry that these details replace. False if it is reconciled already."""
@@ -210,6 +214,27 @@ class Importer:
 			return False
 		frappe.get_doc("Bank Transaction", summary.name).cancel()
 		return True
+
+
+def match_outgoing(bank_transaction, transaction: camt.Transaction) -> str | None:
+	"""Reconcile a debit with the Payment Entry of a payment proposal, found by its end-to-end ID."""
+	payment = frappe.db.get_value(
+		"Payment Entry",
+		{
+			"reference_no": transaction.end_to_end_id,
+			"payment_type": "Pay",
+			"docstatus": 1,
+			"bank_account": bank_transaction.bank_account,
+			"clearance_date": ("is", "not set"),
+		},
+		["name", "paid_amount"],
+		as_dict=True,
+	)
+	if not payment or not _equal(transaction.amount, flt(payment.paid_amount)):
+		return None
+	bank_transaction.add_payment_entries([{"payment_doctype": "Payment Entry", "payment_name": payment.name}])
+	bank_transaction.save()
+	return payment.name
 
 
 def _equal(amount: Decimal, due: float) -> bool:

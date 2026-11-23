@@ -23,7 +23,13 @@ def dunning(invoice, dunning_type: str):
 	from erpnext.accounts.doctype.sales_invoice.sales_invoice import create_dunning
 
 	doc = create_dunning(invoice.name)
+	# The form takes fee, interest and accounts from the dunning type; do the same here
+	level = frappe.get_doc("Dunning Type", dunning_type)
 	doc.dunning_type = dunning_type
+	doc.dunning_fee = level.dunning_fee
+	doc.rate_of_interest = level.rate_of_interest
+	doc.income_account = level.income_account
+	doc.cost_center = level.cost_center
 	doc.posting_date = today()
 	doc.get_dunning_letter_text()
 	doc.insert()
@@ -46,7 +52,9 @@ class TestDunning(IntegrationTestCase):
 		self.assertEqual(flt(first.dunning_fee), 20)
 		languages = {row.language for row in first.dunning_letter_text}
 		self.assertTrue({"de", "fr", "it", "en"} <= languages)
-		self.assertIn("Mahnung", next(r.body_text for r in first.dunning_letter_text if r.language == "de"))
+		self.assertIn(
+			"Zahlungserinnerung", next(r.body_text for r in first.dunning_letter_text if r.language == "de")
+		)
 		# Running it again leaves the existing levels alone
 		self.assertEqual(create_dunning_types(self.company, fees=[1, 2, 3]), [])
 
