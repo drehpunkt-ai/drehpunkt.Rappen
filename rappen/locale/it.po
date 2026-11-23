@@ -196,6 +196,9 @@ msgctxt "Rappen"
 msgid "Discount"
 msgstr "Sconto"
 
+msgid "Document"
+msgstr "Documento"
+
 msgid "Document type"
 msgstr "Tipo di documento"
 
@@ -308,11 +311,17 @@ msgstr "L'IBAN {iban} non è valido: inizia con il codice del paese e due cifre 
 msgid "IBAN {iban} is invalid: the check digits do not match."
 msgstr "L'IBAN {iban} non è valido: le cifre di controllo non corrispondono."
 
+msgid "Imported"
+msgstr "Importato"
+
 msgid "Imported with errors"
 msgstr "Importato con errori"
 
 msgid "Incoming payments"
 msgstr "Pagamenti in entrata"
+
+msgid "Input tax"
+msgstr "Imposta precedente"
 
 msgid "Input tax on investments and other operating costs (405)"
 msgstr "Imposta precedente sugli investimenti e altri costi d'esercizio (405)"
@@ -352,8 +361,14 @@ msgctxt "Rappen"
 msgid "Item"
 msgstr "Articolo"
 
+msgid "Kind"
+msgstr "Tipo"
+
 msgid "Matching document"
 msgstr "Documento corrispondente"
+
+msgid "Message"
+msgstr "Messaggio"
 
 msgid "Message and billing information of a QR-bill have at most {limit} characters together, here they have {length}."
 msgstr "Il messaggio e le informazioni di fatturazione di una QR-fattura hanno insieme al massimo {limit} caratteri, qui {length}."
@@ -556,6 +571,9 @@ msgstr "Prestazioni all'estero (221)"
 msgid "Swiss and Liechtenstein postal codes have four digits, {postal_code} does not."
 msgstr "I numeri postali della Svizzera e del Liechtenstein hanno quattro cifre, {postal_code} no."
 
+msgid "Tax rate"
+msgstr "Aliquota"
+
 msgid "Taxable supply"
 msgstr "Prestazione imponibile"
 
@@ -719,6 +737,9 @@ msgstr "Totale dell'imposta dovuta (399)"
 msgctxt "Rappen"
 msgid "Town"
 msgstr "Località"
+
+msgid "Turnover"
+msgstr "Cifra d'affari"
 
 msgid "Turnover of invoices without VAT. Assign it to boxes 220 to 280 below."
 msgstr "Cifra d'affari delle fatture senza IVA. Attribuirla sotto alle cifre da 220 a 280."
