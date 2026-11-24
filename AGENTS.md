@@ -2,7 +2,7 @@
 
 Rappen is a Frappe app that adds Swiss localization to ERPNext 16: QR-bill, camt import and reconciliation, pain.001, VAT return (eCH-0217) and dunning. What it does for users is in [README.md](README.md). This file is for whoever changes the code.
 
-The repository will be public under MIT. Write everything as if it already were: no internal names, no customer data, no secrets, no addresses of real people or companies.
+The repository is public under MIT. No internal names, no customer data, no secrets, no addresses of real people or companies.
 
 ## Layout
 

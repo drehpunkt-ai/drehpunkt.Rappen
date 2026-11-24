@@ -108,4 +108,8 @@ Generated files are validated against the official schemas, which Rappen ships u
 
 ERPNext and Frappe are trademarks of Frappe Technologies Pvt. Ltd. Rappen is an independent project and is not affiliated with or endorsed by Frappe.
 
-Maintained by [Drehpunkt](https://drehpunkt.ai).
+## About Drehpunkt
+
+Rappen is built and maintained by [Drehpunkt](https://drehpunkt.ai). Drehpunkt helps Swiss SMEs simplify and automate their processes with AI, on infrastructure in Switzerland, and runs ERPNext with Rappen for its customers. If you need help with ERPNext in Switzerland, get in touch through [drehpunkt.ai](https://drehpunkt.ai).
+
+Issues and pull requests are welcome.
