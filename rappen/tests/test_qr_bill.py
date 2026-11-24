@@ -46,7 +46,7 @@ class TestQrBill(IntegrationTestCase):
 				"country": "Germany",
 			}
 		).insert()
-		invoice = utils.sales_invoice(self.company, submit=False, customer_address=address.name)
+		invoice = frappe._dict(company=self.company, customer_address=address.name)
 		self.assertEqual(recipient_lines(invoice)[:2], ["Musterweg 3", "79539 Lörrach"])
 		self.assertEqual(len(recipient_lines(invoice)), 3)
 
