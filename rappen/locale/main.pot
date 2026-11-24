@@ -296,9 +296,6 @@ msgstr ""
 msgid "Get open purchase invoices"
 msgstr ""
 
-msgid "Goods received, not yet billed"
-msgstr ""
-
 msgid "IBAN of the supplier"
 msgstr ""
 

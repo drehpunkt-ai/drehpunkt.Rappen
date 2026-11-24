@@ -100,7 +100,8 @@ def _stock_received_but_not_billed(company: str) -> dict | None:
 	account = frappe.get_doc(
 		{
 			"doctype": "Account",
-			"account_name": _("Goods received, not yet billed"),
+			# German like the rest of the Swiss chart
+			"account_name": "Wareneingänge, noch nicht fakturiert",
 			"account_number": "2005",
 			"parent_account": frappe.db.get_value("Account", payables, "parent_account"),
 			"company": company,

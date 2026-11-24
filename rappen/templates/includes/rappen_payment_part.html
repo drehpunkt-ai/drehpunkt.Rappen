@@ -10,12 +10,13 @@
 {%- endmacro -%}
 <div class="rappen-payment-part{% if page %} rappen-payment-page{% endif %}">
 <style>
+	{{ font_css }}
 	/* Page of its own: needs a print format without page margins (see README), so that the payment part
 	   sits at the bottom edge of the paper */
 	.rappen-payment-page { page-break-before: always; break-before: page; height: 297mm; position: relative; overflow: hidden; }
 	.rappen-payment-page .rpp { position: absolute; left: 0; bottom: 0; }
 	.rpp { position: relative; width: 210mm; height: 105mm; box-sizing: border-box; background: #fff;
-		color: #000; font-family: Arial, "Liberation Sans", Helvetica, "Frutiger", sans-serif; font-weight: normal;
+		color: #000; font-family: "Liberation Sans", Arial, Helvetica, "Frutiger", sans-serif; font-weight: normal;
 		border-top: 0.2mm solid #000; text-align: left; page-break-inside: avoid; break-inside: avoid; }
 	.rpp * { box-sizing: border-box; margin: 0; padding: 0; line-height: inherit; letter-spacing: normal; }
 	.rpp-separate { position: absolute; top: -3.2mm; left: 0; width: 210mm; text-align: center; font-size: 7pt; line-height: 3mm; }

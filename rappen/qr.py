@@ -1,6 +1,9 @@
 """QR-bill for Sales Invoice and Dunning: payment reference, the bill's content and the payment part."""
 
+import base64
 import re
+from functools import cache
+from pathlib import Path
 
 import frappe
 from frappe import _
@@ -188,6 +191,22 @@ def sender_line(doc) -> str:
 
 # Payment part
 
+FONTS = Path(__file__).parent / "public" / "fonts" / "liberation"
+
+
+@cache
+def font_face_css() -> str:
+	"""Liberation Sans, embedded unchanged as data URIs, so the payment part has a font the guidelines allow on
+	every server (Arial, Frutiger, Helvetica or Liberation Sans) without loading anything from outside."""
+	rules = []
+	for weight, name in (("normal", "LiberationSans-Regular.ttf"), ("bold", "LiberationSans-Bold.ttf")):
+		data = base64.b64encode((FONTS / name).read_bytes()).decode()
+		rules.append(
+			"@font-face { font-family: 'Liberation Sans'; font-style: normal; "
+			f"font-weight: {weight}; src: url(data:font/ttf;base64,{data}) format('truetype'); }}"
+		)
+	return "\n".join(rules)
+
 
 def payment_part_html(doc, page: bool = True, language: str | None = None) -> Markup:
 	"""HTML of the payment part with receipt for a print format.
@@ -199,7 +218,12 @@ def payment_part_html(doc, page: bool = True, language: str | None = None) -> Ma
 	if not needs_payment_part(doc):
 		return Markup("")
 	labels = qrbill.labels(language or frappe.local.lang)
-	context = {"labels": labels, "page": page, "problem_title": _("This QR-bill cannot be paid:")}
+	context = {
+		"labels": labels,
+		"page": page,
+		"problem_title": _("This QR-bill cannot be paid:"),
+		"font_css": Markup(font_face_css()),
+	}
 	try:
 		bill = build_qr_bill(doc)
 		problems = bill.problems()

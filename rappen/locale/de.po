@@ -296,9 +296,6 @@ msgstr "Aus der QR-Rechnung. Leer: das Bankkonto des Lieferanten."
 msgid "Get open purchase invoices"
 msgstr "Offene Eingangsrechnungen holen"
 
-msgid "Goods received, not yet billed"
-msgstr "Wareneingänge, noch nicht fakturiert"
-
 msgid "IBAN of the supplier"
 msgstr "IBAN des Lieferanten"
 

@@ -102,6 +102,10 @@ The CI runs the setup wizard (Switzerland, CHF, Swiss chart of accounts) before 
 
 Generated files are validated against the official schemas, which Rappen ships unchanged in `rappen/core/schemas`: the Swiss version of pain.001.001.09 by SIX (with its copyright notice) and eCH-0217 V2.0.0 with the eCH schemas it imports, from www.ech.ch. They are used for validation only.
 
+## Fonts
+
+The payment part uses Liberation Sans, one of the fonts the guidelines allow. Rappen ships it unchanged (`rappen/public/fonts/liberation`, SIL Open Font License 1.1, Copyright Red Hat) and embeds it into the printout, so the payment part looks the same on every server, including Frappe Cloud.
+
 ## License
 
 [MIT](LICENSE)

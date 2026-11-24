@@ -296,9 +296,6 @@ msgstr "Dalla QR-fattura. Vuoto: il conto bancario del fornitore."
 msgid "Get open purchase invoices"
 msgstr "Recuperare le fatture dei fornitori aperte"
 
-msgid "Goods received, not yet billed"
-msgstr "Merci ricevute, non ancora fatturate"
-
 msgid "IBAN of the supplier"
 msgstr "IBAN del fornitore"
 
