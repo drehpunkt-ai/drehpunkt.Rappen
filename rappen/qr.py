@@ -189,6 +189,22 @@ def sender_line(doc) -> str:
 	return ", ".join(qrbill.address_lines(address)) if address else company_name
 
 
+def recipient_lines(doc) -> list[str]:
+	"""Address lines of the recipient in the envelope window: street, postcode and town, and the country only
+	when the letter goes abroad (Swiss Post, addressing guidelines). Empty without a customer address."""
+	name = doc.get("customer_address")
+	values = name and frappe.db.get_value(
+		"Address", name, ["address_line1", "address_line2", "pincode", "city", "country"], as_dict=True
+	)
+	if not values:
+		return []
+	lines = [line for line in (values.address_line1, values.address_line2) if line]
+	lines.append(" ".join(part for part in (values.pincode, values.city) if part))
+	if values.country and values.country != frappe.get_cached_value("Company", doc.company, "country"):
+		lines.append(_(values.country).upper())
+	return [line for line in lines if line]
+
+
 # Payment part
 
 FONTS = Path(__file__).parent / "public" / "fonts" / "liberation"

@@ -4,7 +4,7 @@
 	{{ top(doc, letter_head, no_letterhead, [
 		(_("Number", context="Rappen"), doc.name),
 		(_("Date", context="Rappen"), doc.get_formatted("posting_date")),
-		(_("Customer number", context="Rappen"), doc.customer),
+		(_("Customer number", context="Rappen"), doc.customer if doc.customer != doc.customer_name else ""),
 	]) }}
 
 	<h1>{{ rappen_dunning_title(doc) | e }}</h1>

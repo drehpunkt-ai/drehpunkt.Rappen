@@ -6,7 +6,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 
 from rappen.core import reference
-from rappen.qr import build_qr_bill, payment_part_html, set_payment_reference
+from rappen.qr import build_qr_bill, payment_part_html, recipient_lines, set_payment_reference
 from rappen.tests import utils
 
 MM = 72 / 25.4  # PDF points per millimetre
@@ -29,6 +29,26 @@ class TestQrBill(IntegrationTestCase):
 		)
 		digits = re.sub(r"\D", "", invoice.name)
 		self.assertTrue(invoice.rappen_payment_reference[:-1].endswith("1" + digits))
+
+	def test_recipient_without_country_within_switzerland(self):
+		invoice = utils.sales_invoice(self.company, submit=False)
+		self.assertEqual(recipient_lines(invoice), ["Route de Genève 7bis", "1260 Nyon"])
+
+	def test_recipient_with_country_abroad(self):
+		address = frappe.get_doc(
+			{
+				"doctype": "Address",
+				"address_title": "Rappen Ausland",
+				"address_type": "Billing",
+				"address_line1": "Musterweg 3",
+				"pincode": "79539",
+				"city": "Lörrach",
+				"country": "Germany",
+			}
+		).insert()
+		invoice = utils.sales_invoice(self.company, submit=False, customer_address=address.name)
+		self.assertEqual(recipient_lines(invoice)[:2], ["Musterweg 3", "79539 Lörrach"])
+		self.assertEqual(len(recipient_lines(invoice)), 3)
 
 	def test_creditor_reference_for_iban_account(self):
 		invoice = utils.sales_invoice(self.company, rappen_bank_account=self.iban_account)

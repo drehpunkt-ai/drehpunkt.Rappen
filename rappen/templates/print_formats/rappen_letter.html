@@ -47,7 +47,9 @@
 		{%- set sender = rappen_sender_line(doc) %}
 		{%- if sender %}<div class="rl-sender">{{ sender | e }}</div>{% endif %}
 		<div><b>{{ doc.customer_name | e }}</b></div>
-		{%- if doc.address_display %}<div>{{ doc.address_display }}</div>{% endif %}
+		{%- set lines = rappen_recipient_lines(doc) %}
+		{%- for line in lines %}<div>{{ line | e }}</div>{% endfor %}
+		{%- if not lines and doc.address_display %}<div>{{ doc.address_display }}</div>{% endif %}
 	</div>
 </div>
 {%- endmacro -%}

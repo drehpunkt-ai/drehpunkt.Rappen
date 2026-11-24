@@ -22,6 +22,13 @@ def rappen_sender_line(doc) -> str:
 	return sender_line(doc)
 
 
+def rappen_recipient_lines(doc) -> list[str]:
+	"""Recipient address for the envelope window, without the country for letters within the country."""
+	from rappen.qr import recipient_lines
+
+	return recipient_lines(doc)
+
+
 def rappen_dunning_title(doc) -> str:
 	"""Title of a dunning letter, e.g. «1. Mahnung»."""
 	from rappen.dunning import dunning_title

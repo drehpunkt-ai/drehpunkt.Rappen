@@ -5,7 +5,7 @@
 		(_("Invoice number", context="Rappen"), doc.name),
 		(_("Date", context="Rappen"), doc.get_formatted("posting_date")),
 		(_("Due date", context="Rappen"), doc.get_formatted("due_date") if not doc.is_return else ""),
-		(_("Customer number", context="Rappen"), doc.customer),
+		(_("Customer number", context="Rappen"), doc.customer if doc.customer != doc.customer_name else ""),
 		(_("Your reference", context="Rappen"), doc.po_no),
 		(_("VAT number", context="Rappen"), doc.get("company_tax_id")),
 	]) }}

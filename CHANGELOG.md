@@ -10,3 +10,4 @@ First version for ERPNext 16:
 - Swiss dunning levels with letters in four languages
 - Payment proposals with pain.001.001.09 after the Swiss Payment Standards 2026
 - VAT return after eCH-0217 V2.0.0
+- Print formats: recipient address after Swiss Post (country only for letters abroad), customer number only when it differs from the name
