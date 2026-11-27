@@ -32,6 +32,13 @@
         "github-actions"
       ],
       "groupName": "GitHub Actions"
+    },
+    {
+      "description": "Python bleibt bei 3.14, bis Frappe 3.15 unterstützt (Integrationstests mit 3.15 scheitern, 27.11.2026)",
+      "matchDepNames": [
+        "python"
+      ],
+      "allowedVersions": "<3.15"
     }
   ]
 }
