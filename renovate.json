@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Renovate für drehpunkt.Rappen, Grundlage wie in drehpunkt.Plattform (RUNBOOK.md, Renovate). Schlägt neue Versionen als Pull Request vor, ausgerollt wird nie von selbst.",
+  "extends": [
+    "config:recommended",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
+  "timezone": "Europe/Zurich",
+  "dependencyDashboard": {
+    "enabled": true,
+    "title": "Renovate: Übersicht"
+  },
+  "labels": [
+    "renovate"
+  ],
+  "prConcurrentLimit": 10,
+  "minimumReleaseAge": "14 days",
+  "internalChecksFilter": "strict",
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "minimumReleaseAge": null,
+    "labels": [
+      "renovate",
+      "sicherheit"
+    ]
+  },
+  "packageRules": [
+    {
+      "description": "Actions gesammelt in einem Pull Request",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "GitHub Actions"
+    }
+  ]
+}
