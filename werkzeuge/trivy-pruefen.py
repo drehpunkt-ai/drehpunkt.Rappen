@@ -13,8 +13,9 @@ Kritisch heisst Stufe CRITICAL mit verfügbarer Korrektur: Dann endet das Skript
 Hinweis im Bericht. Bewusst hingenommene Funde stehen in .trivyignore.yaml, mit Begründung (statement) und
 Ablaufdatum (expired_at). Ein Image, das sich nicht prüfen lässt, gilt ebenfalls als Fehler.
 
-Das Ergebnis steht in trivy-ergebnis.json (für den Versions-Exporter, Kapitel 8) und als Bericht in der Ausgabe, in
-GitHub Actions zusätzlich in der Zusammenfassung des Laufs.
+Das Ergebnis steht in trivy-ergebnis.json und als Bericht in der Ausgabe, in GitHub Actions zusätzlich in der
+Zusammenfassung des Laufs. Der Versions-Exporter (Kapitel 8) liest daraus die Funde und, pro Image, die Dienste, um
+die laufenden Container mit dem Repo abzugleichen.
 
 Aufruf: uv run --offline --script werkzeuge/trivy-pruefen.py [--trivy <pfad>]
 """
@@ -39,15 +40,19 @@ def compose_dateien():
 
 
 def images():
+    """Pro Image die Compose-Dateien und die Namen der Dienste. Coolify nennt Container <dienst>-<uuid>, darüber
+    ordnet der Versions-Exporter laufende Container dem Image im Repo zu."""
     aus = {}
     for datei in compose_dateien():
         with open(os.path.join(REPO, datei)) as f:
             inhalt = yaml.safe_load(f) or {}
-        for dienst in (inhalt.get("services") or {}).values():
+        for name, dienst in (inhalt.get("services") or {}).items():
             bild = (dienst or {}).get("image")
             if bild:
-                aus.setdefault(bild, set()).add(datei)
-    return {b: sorted(d) for b, d in sorted(aus.items())}
+                e = aus.setdefault(bild, {"dateien": set(), "dienste": set()})
+                e["dateien"].add(datei)
+                e["dienste"].add(name)
+    return {b: {k: sorted(v) for k, v in e.items()} for b, e in sorted(aus.items())}
 
 
 def trivy(programm, *argumente):
@@ -68,11 +73,15 @@ def funde_images(bericht):
             if not v.get("FixedVersion"):
                 continue
             f = funde.setdefault(v["VulnerabilityID"], {
-                "stufe": v["Severity"], "id": v["VulnerabilityID"], "pakete": [], "behoben_in": v["FixedVersion"],
-                "titel": (v.get("Title") or "")[:120]})
+                "stufe": v["Severity"], "id": v["VulnerabilityID"], "pakete": [], "orte": [],
+                "behoben_in": v["FixedVersion"], "titel": (v.get("Title") or "")[:120]})
             paket = f"{v.get('PkgName')} {v.get('InstalledVersion')}"
             if paket not in f["pakete"]:
                 f["pakete"].append(paket)
+            # Für Einträge in .trivyignore.yaml: Pfad im Image (paths), bei Paketen des Systems die purl (purls)
+            ort = v.get("PkgPath") or (v.get("PkgIdentifier") or {}).get("PURL")
+            if ort and ort not in f["orte"]:
+                f["orte"].append(ort)
     return list(funde.values())
 
 
@@ -92,10 +101,11 @@ def funde_repo(bericht):
 def main():
     programm = sys.argv[sys.argv.index("--trivy") + 1] if "--trivy" in sys.argv else "trivy"
     ergebnis = {"zeit": datetime.datetime.now(datetime.UTC).isoformat(timespec="seconds"), "images": [], "ungepinnt": [], "repo": {}}
-    for bild, dateien in images().items():
+    for bild, angaben in images().items():
+        dateien, dienste = angaben["dateien"], angaben["dienste"]
         if "@sha256:" not in bild:
             # Lokal gebaut oder nicht gepinnt: Trivy kann es nicht holen. Dockerfile und Lockfiles prüft der Teil «Repo»
-            ergebnis["ungepinnt"].append({"image": bild, "dateien": dateien})
+            ergebnis["ungepinnt"].append({"image": bild, "dateien": dateien, "dienste": dienste})
             print(f"HINWEIS {bild}: ohne Digest, nicht geprüft", flush=True)
             continue
         ziel = bild
@@ -104,7 +114,8 @@ def main():
                 ziel = neu + ziel.removeprefix(alt)
         bericht, fehler = trivy(programm, "image", "--scanners", "vuln", "--severity", "HIGH,CRITICAL",
                                 "--ignore-unfixed", ziel)
-        eintrag = {"image": bild, "dateien": dateien, "fehler": fehler, "funde": funde_images(bericht) if bericht else []}
+        eintrag = {"image": bild, "dateien": dateien, "dienste": dienste, "fehler": fehler,
+                   "funde": funde_images(bericht) if bericht else []}
         ergebnis["images"].append(eintrag)
         kritisch = sum(f["stufe"] == "CRITICAL" for f in eintrag["funde"])
         print(f"{'FEHLER ' if fehler else ''}{bild.split('@')[0]}: {kritisch} kritisch, "
